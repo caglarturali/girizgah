@@ -13,7 +13,7 @@ import UserPicker from './UserPicker';
 import Settings from 'Components/Settings';
 import DateDisplay from 'Components/DateDisplay';
 import SettingsToggler from 'Components/SettingsToggler';
-import ExperimentalStars from 'Components/ExperimentalStars';
+// import ExperimentalStars from 'Components/ExperimentalStars';
 
 class LoginWindow extends React.Component {
   constructor(props) {
@@ -41,9 +41,9 @@ class LoginWindow extends React.Component {
       <DateDisplay key="date-display" />,
       <Settings key="settings-window" />,
       <SettingsToggler key="settings-button" />,
-      <If condition={this.props.settings.experimental_stars_enabled} key="experimental-stars-wrap">
-        <ExperimentalStars key="experimental-stars" />
-      </If>
+      // <If condition={this.props.settings.experimental_stars_enabled} key="experimental-stars-wrap">
+      //   <ExperimentalStars key="experimental-stars" />
+      // </If>
     ];
   }
 }
