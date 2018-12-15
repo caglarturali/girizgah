@@ -7,7 +7,7 @@ export function addAdditionalSettings(state) {
 
   let distroDefault =
     window.__debug === true
-      ? 'src/test/logos/pardus.png'
+      ? 'src/sample/logos/pardus.png'
       : '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-girizgah/src/img/logos/pardus.png';
 
   let defaults = {
