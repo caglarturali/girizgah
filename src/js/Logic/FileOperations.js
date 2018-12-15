@@ -5,7 +5,7 @@
 export function getWallpaperDirectory() {
   // Return the test folder when debugging.
   if (window.__debug === true) {
-    return 'src/test/wallpapers/';
+    return 'src/sample/wallpapers/';
   }
 
   let wallpapersDirectory = window.config.get_str('branding', 'background_images');
@@ -45,12 +45,12 @@ export function getLogos() {
   // If we're in test mode, just return the default three.
   if (window.__debug === true) {
     return [
-      ['src/test/logos/pardus.png', 'pardus.png'],
-      ['src/test/logos/pardus-yellow.png', 'pardus-yellow.png'],
-      ['src/test/logos/pardus-white.png', 'pardus-white.png'],
-      ['src/test/logos/archlinux.png', 'archlinux.png'],
-      ['src/test/logos/antergos.png', 'antergos.png'],
-      ['src/test/logos/ubuntu.png', 'ubuntu.png']
+      ['src/sample/logos/pardus.png', 'pardus.png'],
+      ['src/sample/logos/pardus-yellow.png', 'pardus-yellow.png'],
+      ['src/sample/logos/pardus-white.png', 'pardus-white.png'],
+      ['src/sample/logos/archlinux.png', 'archlinux.png'],
+      ['src/sample/logos/antergos.png', 'antergos.png'],
+      ['src/sample/logos/ubuntu.png', 'ubuntu.png']
     ];
   }
 
