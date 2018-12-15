@@ -65,6 +65,7 @@
     "hoek": ">=4.2.1"
   },
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "webpack-dev-server": "^3.1.10"
   }
 }
