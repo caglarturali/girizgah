@@ -6,8 +6,9 @@
   "scripts": {
     "test": "./node_modules/.bin/eslint src/es6/**",
     "build": "webpack --progress --colors --env.production",
-    "build:dev": "webpack-dev-server --colors --env.production",
+    "build:dev": "webpack --progress --colors --env.development",
     "watch": "webpack --progress --colors --watch --env.development",
+    "watch:dev": "webpack-dev-server --colors --env.development",
     "serve": "live-server --entry-file=index.html"
   },
   "repository": {
