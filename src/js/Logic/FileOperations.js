@@ -23,7 +23,14 @@ export function getWallpapers(directory) {
   // If we're in test mode, we stick to a static rotation of three default wallpapers.
   // In production, it is possible that a user will change what wallpapers are available.
   if (window.__debug === true) {
-    return ['boko.jpg', 'mountains-2.png', 'space-1.jpg'];
+    return [
+      'wallpaper-01_low.jpg',
+      'wallpaper-02_low.jpg',
+      'wallpaper-03_low.jpg',
+      'wallpaper-04_low.jpg',
+      'wallpaper-05_low.jpg',
+      'wallpaper-06_low.jpg'
+    ];
   }
 
   let wallpapers;
@@ -39,6 +46,7 @@ export function getLogos() {
   if (window.__debug === true) {
     return [
       ['src/test/logos/pardus.png', 'pardus.png'],
+      ['src/test/logos/pardus-yellow.png', 'pardus-yellow.png'],
       ['src/test/logos/pardus-white.png', 'pardus-white.png'],
       ['src/test/logos/archlinux.png', 'archlinux.png'],
       ['src/test/logos/antergos.png', 'antergos.png'],
