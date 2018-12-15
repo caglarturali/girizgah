@@ -7,8 +7,8 @@ export function addAdditionalSettings(state) {
 
   let distroDefault =
     window.__debug === true
-      ? 'src/test/logos/archlinux.png'
-      : '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/archlinux.png';
+      ? 'src/test/logos/pardus.png'
+      : '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-girizgah/src/img/logos/pardus.png';
 
   let defaults = {
     active: false,

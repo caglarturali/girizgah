@@ -13,7 +13,7 @@ export function getWallpaperDirectory() {
   // Do NOT allow the default wallpaper directory to set, as this will prevent the default provided backgrounds from
   // being used 100% of the time in a stock install.
   if (wallpapersDirectory == '/usr/share/backgrounds' || wallpapersDirectory == '/usr/share/backgrounds/') {
-    wallpapersDirectory = '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/wallpapers/';
+    wallpapersDirectory = '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-girizgah/src/img/wallpapers/';
   }
 
   return wallpapersDirectory;
@@ -38,6 +38,8 @@ export function getLogos() {
   // If we're in test mode, just return the default three.
   if (window.__debug === true) {
     return [
+      ['src/test/logos/pardus.png', 'pardus.png'],
+      ['src/test/logos/pardus-white.png', 'pardus-white.png'],
       ['src/test/logos/archlinux.png', 'archlinux.png'],
       ['src/test/logos/antergos.png', 'antergos.png'],
       ['src/test/logos/ubuntu.png', 'ubuntu.png']
@@ -47,7 +49,7 @@ export function getLogos() {
   // Return a tuple of the path and filename for usage in the Settings dialogue.
   let userLogo = window.config.get_str('branding', 'logo');
   let themeLogos = window.greeterutil.dirlist(
-    '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-aether/src/img/logos/'
+    '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-girizgah/src/img/logos/'
   );
 
   themeLogos.push(userLogo);
