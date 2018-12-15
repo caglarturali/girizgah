@@ -18,7 +18,7 @@ const Glass = {
   style_command_text_color: 'hsla(0, 0%, 90%, 0.9)',
   style_login_border_color: 'hsla(0, 0%, 0%, 0)',
   style_login_border_enabled: false,
-  style_login_button_color: 'hsla(0, 0%, 0%, 0.5)',
+  style_login_button_color: 'hsla(0, 0%, 0%, 0.45)',
   style_login_gradient_top_color: 'hsla(0, 0%, 100%, 0)',
   style_login_gradient_bottom_color: 'hsla(0, 0%, 100%, 0.32)',
   style_login_username_color: 'hsla(0, 100%, 100%, 1)',
