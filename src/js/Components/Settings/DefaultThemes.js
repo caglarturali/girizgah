@@ -1,5 +1,5 @@
 const Glass = {
-  avatar_enabled: false,
+  avatar_enabled: true,
   avatar_size: '200px',
   avatar_shape: 'circle',
   date_enabled: true,
@@ -27,7 +27,7 @@ const Glass = {
 };
 
 const Default = {
-  avatar_enabled: false,
+  avatar_enabled: true,
   avatar_size: '200px',
   avatar_shape: 'circle',
   date_enabled: true,
@@ -111,7 +111,7 @@ const Capitan = {
 };
 
 const Ember = {
-  avatar_enabled: false,
+  avatar_enabled: true,
   avatar_size: '200px',
   avatar_shape: 'circle',
   date_enabled: true,
