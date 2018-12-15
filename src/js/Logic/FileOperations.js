@@ -24,12 +24,12 @@ export function getWallpapers(directory) {
   // In production, it is possible that a user will change what wallpapers are available.
   if (window.__debug === true) {
     return [
-      'wallpaper-01_low.jpg',
-      'wallpaper-02_low.jpg',
-      'wallpaper-03_low.jpg',
-      'wallpaper-04_low.jpg',
-      'wallpaper-05_low.jpg',
-      'wallpaper-06_low.jpg'
+      'wallpaper-01.jpg',
+      'wallpaper-02.jpg',
+      'wallpaper-03.jpg',
+      'wallpaper-04.jpg',
+      'wallpaper-05.jpg',
+      'wallpaper-06.jpg'
     ];
   }
 

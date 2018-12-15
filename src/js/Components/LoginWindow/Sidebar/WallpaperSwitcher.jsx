@@ -40,7 +40,7 @@ class WallpaperSwitcher extends React.Component {
   componentWillMount() {
     // Set background wallpaper
     let directory = this.state.directory;
-    let image = Settings.requestSetting('wallpaper', 'space-1.jpg');
+    let image = Settings.requestSetting('wallpaper', 'wallpaper-01');
     this.cyclerBackground = document.querySelectorAll('.wallpaper-background')[0];
     this.cyclerForeground = document.querySelectorAll('.wallpaper-foreground')[0];
     this.cyclerPreloader = document.querySelectorAll('.wallpaper-preload')[0];
