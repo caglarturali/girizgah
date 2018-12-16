@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Power.Shutdown",
+    "defaultMessage": "Shutdown"
+  },
+  {
+    "id": "Power.Reboot",
+    "defaultMessage": "Reboot"
+  },
+  {
+    "id": "Power.Hibernate",
+    "defaultMessage": "Hibernate"
+  },
+  {
+    "id": "Power.Sleep",
+    "defaultMessage": "Sleep"
+  }
+]
