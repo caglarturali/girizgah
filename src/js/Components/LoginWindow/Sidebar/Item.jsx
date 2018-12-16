@@ -15,8 +15,13 @@ export const SVGMap = {
   sleep: require('img/sleep.svg')
 };
 
-export const Item = ({ command, handleCommand, settings }) => {
-  let disabled = command.toLowerCase().split('.')[1] || false;
+export const Item = ({ command, handleCommand, settings, content }) => {
+  let disabled;
+  if (command.command && command.content) {
+    disabled = command.isActive;
+  } else {
+    disabled = command.toLowerCase().split('.')[1] || false;
+  }
   command = command.toLowerCase().split('.')[0];
 
   let classes = ['command', command, disabled].filter(e => e);
@@ -40,7 +45,7 @@ export const Item = ({ command, handleCommand, settings }) => {
   return (
     <div className={classes.join(' ')} onClick={handleCommand.bind(this, command, disabled)}>
       <div className={iconWrapperClasses.join(' ')} dangerouslySetInnerHTML={{ __html: SVGMap[command] }} />
-      <div className={`text ${textStyle}`}>{command}</div>
+      <div className={`text ${textStyle}`}>{content}</div>
     </div>
   );
 };
@@ -48,7 +53,8 @@ export const Item = ({ command, handleCommand, settings }) => {
 Item.propTypes = {
   command: PropTypes.string.isRequired,
   handleCommand: PropTypes.func.isRequired,
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired
 };
 
 export default connect(

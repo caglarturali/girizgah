@@ -12,6 +12,8 @@ import Notifications from './Utils/Notifications';
 import { getDefaultState, PrimaryReducer } from './Reducers/PrimaryReducer';
 import { addAdditionalSettings } from './Reducers/SettingsReducer';
 
+import { IntlProvider } from 'react-intl';
+
 export default function Main() {
   let initialState = getDefaultState();
   initialState = addAdditionalSettings(initialState);
@@ -30,7 +32,9 @@ export default function Main() {
 
   ReactDOM.render(
     <Provider store={store}>
-      <LoginWindow />
+      <IntlProvider>
+        <LoginWindow />
+      </IntlProvider>
     </Provider>,
     document.getElementById('login-window-mount')
   );
