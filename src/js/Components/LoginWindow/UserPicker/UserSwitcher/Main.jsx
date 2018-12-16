@@ -8,6 +8,8 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
+import { FormattedMessage } from 'react-intl';
+
 const FADE_DURATION = 200;
 
 class UserSwitcher extends React.Component {
@@ -149,11 +151,20 @@ class UserSwitcher extends React.Component {
     return (
       <div className={classes.join(' ')}>
         <div className="header">
-          User <em>{this.state.selectedUserIndex + 1}</em> of <em>{userCount}</em>
+          <FormattedMessage
+            id="UserSwitcher.UserCount"
+            defaultMessage="User <em>{currentUserIndex, number}</em> of <em>{totalUserCount, number}</em>"
+            values={{
+              currentUserIndex: this.state.selectedUserIndex + 1,
+              totalUserCount: userCount
+            }}
+          />
         </div>
         {userList}
         <div className="bottom" onClick={this.handleBackButton.bind(this)}>
-          <div className="left">BACK</div>
+          <div className="left">
+            <FormattedMessage id="UserSwitcher.BackButton" defaultMessage="BACK" />
+          </div>
         </div>
       </div>
     );

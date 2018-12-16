@@ -3,5 +3,7 @@
   "Power.Reboot": "Yeniden Başla",
   "Power.Hibernate": "Askıya Al",
   "Power.Sleep": "Uykuya Al",
-  "Login.SwitchButton": "KULLANICI DEĞİŞTİR"
+  "Login.SwitchButton": "KULLANICI DEĞİŞTİR",
+  "UserSwitcher.BackButton": "GERİ",
+  "UserSwitcher.UserCount": "Kullanıcı <em>{currentUserIndex, number}</em> / <em>{totalUserCount, number}</em>"
 }
