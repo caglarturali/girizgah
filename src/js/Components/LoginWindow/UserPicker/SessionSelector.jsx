@@ -8,6 +8,8 @@ import SessionItem from './SessionItem';
 
 import { connect } from 'react-redux';
 
+import { FormattedMessage } from 'react-intl';
+
 const CLOSE_SESSION_SELECT = '__AETHER_COMMAND_CLOSE_SESSION_SELECT__';
 
 const TRANSITION_NONE = 0;
@@ -88,7 +90,10 @@ class SessionSelector extends React.Component {
         {rows}
         <SessionItem
           key={CLOSE_SESSION_SELECT}
-          session={{ name: 'Back', key: CLOSE_SESSION_SELECT }}
+          session={{
+            name: <FormattedMessage id="SessionSelect.Back" defaultMessage="Back" />,
+            key: CLOSE_SESSION_SELECT
+          }}
           buttonColor={this.props.buttonColor}
           handleClick={this.handleClick.bind(this)}
           typeClass={backClass.join(' ')}
