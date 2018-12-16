@@ -13,6 +13,7 @@ import { getDefaultState, PrimaryReducer } from './Reducers/PrimaryReducer';
 import { addAdditionalSettings } from './Reducers/SettingsReducer';
 
 import { IntlProvider } from 'react-intl';
+import IntlGlobalProvider from '../modules/IntlGlobalProvider';
 import { language, messages } from './Locales';
 
 export default function Main() {
@@ -34,7 +35,9 @@ export default function Main() {
   ReactDOM.render(
     <Provider store={store}>
       <IntlProvider locale={language} messages={messages}>
-        <LoginWindow />
+        <IntlGlobalProvider>
+          <LoginWindow />
+        </IntlGlobalProvider>
       </IntlProvider>
     </Provider>,
     document.getElementById('login-window-mount')
