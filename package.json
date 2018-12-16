@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/eslint src/es6/**",
-    "build": "webpack --progress --colors --env.production",
+    "build": "npm run build:langs && webpack --progress --colors --env.production",
+    "build:langs": "NODE_ENV='production' babel-node src/scripts/mergeMessages.js",
     "build:dev": "webpack --progress --colors --env.development",
     "watch": "webpack --progress --colors --watch --env.development",
     "watch:dev": "webpack-dev-server --colors --env.development",
@@ -69,6 +70,7 @@
     "webpack-cli": "^2.1.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "live-server": "^1.2.1",
     "webpack-dev-server": "^3.1.10"
   }
