@@ -28,8 +28,7 @@ export function getWallpapers(directory) {
       'wallpaper-02.jpg',
       'wallpaper-03.jpg',
       'wallpaper-04.jpg',
-      'wallpaper-05.jpg',
-      'wallpaper-06.jpg'
+      'wallpaper-05.jpg'
     ];
   }
 
