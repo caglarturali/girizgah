@@ -1,0 +1,16 @@
+{
+  "en": {
+    "Power.Shutdown": "Shutdown",
+    "Power.Reboot": "Reboot",
+    "Power.Hibernate": "Hibernate",
+    "Power.Sleep": "Sleep",
+    "Login.SwitchButton": "SWITCH USER"
+  },
+  "tr": {
+    "Power.Shutdown": "Kapat",
+    "Power.Reboot": "Yeniden Başla",
+    "Power.Hibernate": "Askıya Al",
+    "Power.Sleep": "Uykuya Al",
+    "Login.SwitchButton": "KULLANICI DEĞİŞTİR"
+  }
+}

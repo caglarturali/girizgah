@@ -4,6 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 export const UserSwitchButton = ({ handleSwitcherClick }) => {
   let classes = ['left'];
@@ -14,7 +15,7 @@ export const UserSwitchButton = ({ handleSwitcherClick }) => {
 
   return (
     <div className={classes.join(' ')} onClick={handleSwitcherClick}>
-      SWITCH USER
+      <FormattedMessage id="Login.SwitchButton" defaultMessage="SWITCH USER" />
     </div>
   );
 };

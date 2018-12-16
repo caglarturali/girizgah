@@ -14,6 +14,8 @@ import WallpaperSwitcher from './WallpaperSwitcher';
 import Clock from './Clock';
 import List from './List';
 
+import { FormattedMessage } from 'react-intl';
+
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
@@ -32,16 +34,32 @@ class Sidebar extends React.Component {
 
   getEnabledCommands() {
     let commands = {
-      Shutdown: window.lightdm.can_shutdown && this.props.settings.command_shutdown_enabled,
-      Reboot: window.lightdm.can_restart && this.props.settings.command_reboot_enabled,
-      Hibernate: window.lightdm.can_hibernate && this.props.settings.command_hibernate_enabled,
-      Sleep: window.lightdm.can_suspend && this.props.settings.command_sleep_enabled
+      Shutdown: {
+        command: "Shutdown",
+        isActive: window.lightdm.can_shutdown && this.props.settings.command_shutdown_enabled,
+        content: <FormattedMessage key="Power.Shutdown" id="Power.Shutdown" defaultMessage="Shutdown" />
+      },
+      Reboot: {
+        command: "Reboot",
+        isActive: window.lightdm.can_restart && this.props.settings.command_reboot_enabled,
+        content: <FormattedMessage key="Power.Reboot" id="Power.Reboot" defaultMessage="Reboot" />
+      },
+      Hibernate: {
+        command: "Hibernate",
+        isActive: window.lightdm.can_hibernate && this.props.settings.command_hibernate_enabled,
+        content: <FormattedMessage key="Power.Hibernate" id="Power.Hibernate" defaultMessage="Hibernate" />
+      },
+      Sleep: {
+        command: "Sleep",
+        isActive: window.lightdm.can_suspend && this.props.settings.command_sleep_enabled,
+        content: <FormattedMessage key="Power.Sleep" id="Power.Sleep" defaultMessage="Sleep" />
+      }
     };
 
     // Filter out commands we can't execute.
     let enabledCommands = Object.keys(commands)
-      .map(key => (commands[key] ? key : false))
-      .filter(command => command !== false);
+      .map(key => (commands[key] ? commands[key] : false))
+      .filter(command => command.isActive !== false);
 
     // Are both hibernation and suspend disabled?
     // Add the row back and disable it so that the user is aware of what's happening.
