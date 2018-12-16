@@ -1,7 +1,7 @@
 /* eslint { no-redeclare: 0 } */
 import * as Settings from '../Logic/Settings';
 import { setPageZoom } from '../Utils/Utils';
-import Glass from '../Components/Themes/Glass';
+import Glass from '../Themes/Glass';
 
 export function addAdditionalSettings(state) {
   // Define our defaults
