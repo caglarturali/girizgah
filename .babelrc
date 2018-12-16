@@ -13,6 +13,12 @@
     "babel-plugin-syntax-jsx",
     "jsx-control-statements",
     "transform-react-jsx",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    [
+      "react-intl",
+      {
+        "messagesDir": "./public/messages/"
+      }
+    ]
   ]
 }
