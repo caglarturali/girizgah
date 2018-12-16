@@ -1,16 +1,45 @@
+import { defineMessages } from 'react-intl';
+import { intl } from '../../modules/IntlGlobalProvider';
+
+// Cumbersome, but required!
+let formatMessage;
+setTimeout(() => {
+  formatMessage = intl.formatMessage;
+}, 10);
+
+// Define messages.
+const messages = defineMessages({
+  greeting: {
+    id: 'App.Greeting',
+    defaultMessage: 'Hey there!'
+  },
+  switchWallpapers: {
+    id: 'Tip.SwitchWallpapers',
+    defaultMessage: 'TIP: Click the logo to switch wallpapers.'
+  },
+  accessSettings: {
+    id: 'Tip.AccessSettings',
+    defaultMessage: 'TIP: Access settings by hovering over the bottom left of your screen!'
+  }
+});
+
 export default class Notifications {
   constructor() {
     this.container = document.querySelectorAll('.notifications-container')[0];
 
-    if (window.__debug === true) {
-      this.generate('Hey there!', 'success');
+    // Greet user.
+    setTimeout(() => {
+      this.generate(formatMessage(messages.greeting), 'success');
+    }, 100);
 
+    // Only show in debug mode.
+    if (window.__debug === true) {
       setTimeout(() => {
-        this.generate('TIP: Click the logo to switch wallpapers.');
+        this.generate(formatMessage(messages.switchWallpapers));
       }, 2000);
 
       setTimeout(() => {
-        this.generate('TIP: Access settings by hovering over the bottom left of your screen!');
+        this.generate(formatMessage(messages.accessSettings));
       }, 5 * 1000);
     }
   }

@@ -7,7 +7,10 @@
     "SessionSelect.Back": "Back",
     "UserSwitcher.UserCount": "User {currentUserIndex} of {totalUserCount}",
     "UserSwitcher.BackButton": "BACK",
-    "Login.SwitchButton": "SWITCH USER"
+    "Login.SwitchButton": "SWITCH USER",
+    "App.Greeting": "Hey there!",
+    "Tip.SwitchWallpapers": "TIP: Click the logo to switch wallpapers.",
+    "Tip.AccessSettings": "TIP: Access settings by hovering over the bottom left of your screen!"
   },
   "tr": {
     "Power.Shutdown": "Kapat",
@@ -17,6 +20,9 @@
     "SessionSelect.Back": "Geri",
     "UserSwitcher.BackButton": "GERİ",
     "UserSwitcher.UserCount": "Kullanıcı {currentUserIndex} / {totalUserCount}",
-    "Login.SwitchButton": "KULLANICI DEĞİŞTİR"
+    "Login.SwitchButton": "KULLANICI DEĞİŞTİR",
+    "App.Greeting": "Hoşgeldiniz!",
+    "Tip.SwitchWallpapers": "İPUCU: Arkaplanı değiştirmek için Pardus logosuna tıklayın!",
+    "Tip.AccessSettings": "İPUCU: Ekranınızın sol alt köşesinde gezinerek ayarlara erişin!"
   }
 }

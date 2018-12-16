@@ -6,5 +6,8 @@
   "SessionSelect.Back": "Geri",
   "UserSwitcher.BackButton": "GERİ",
   "UserSwitcher.UserCount": "Kullanıcı {currentUserIndex} / {totalUserCount}",
-  "Login.SwitchButton": "KULLANICI DEĞİŞTİR"
+  "Login.SwitchButton": "KULLANICI DEĞİŞTİR",
+  "App.Greeting": "Hoşgeldiniz!",
+  "Tip.SwitchWallpapers": "İPUCU: Arkaplanı değiştirmek için Pardus logosuna tıklayın!",
+  "Tip.AccessSettings": "İPUCU: Ekranınızın sol alt köşesinde gezinerek ayarlara erişin!"
 }
