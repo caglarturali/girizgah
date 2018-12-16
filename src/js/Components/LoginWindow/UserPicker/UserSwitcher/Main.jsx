@@ -153,10 +153,10 @@ class UserSwitcher extends React.Component {
         <div className="header">
           <FormattedMessage
             id="UserSwitcher.UserCount"
-            defaultMessage="User <em>{currentUserIndex, number}</em> of <em>{totalUserCount, number}</em>"
+            defaultMessage="User {currentUserIndex} of {totalUserCount}"
             values={{
-              currentUserIndex: this.state.selectedUserIndex + 1,
-              totalUserCount: userCount
+              currentUserIndex: <em>{this.state.selectedUserIndex + 1}</em>,
+              totalUserCount: <em>{userCount}</em>
             }}
           />
         </div>

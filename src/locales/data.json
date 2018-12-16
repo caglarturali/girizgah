@@ -4,7 +4,7 @@
     "Power.Reboot": "Reboot",
     "Power.Hibernate": "Hibernate",
     "Power.Sleep": "Sleep",
-    "UserSwitcher.UserCount": "User <em>{currentUserIndex, number}</em> of <em>{totalUserCount, number}</em>",
+    "UserSwitcher.UserCount": "User {currentUserIndex} of {totalUserCount}",
     "UserSwitcher.BackButton": "BACK",
     "Login.SwitchButton": "SWITCH USER"
   },
@@ -15,6 +15,6 @@
     "Power.Sleep": "Uykuya Al",
     "Login.SwitchButton": "KULLANICI DEĞİŞTİR",
     "UserSwitcher.BackButton": "GERİ",
-    "UserSwitcher.UserCount": "Kullanıcı <em>{currentUserIndex, number}</em> / <em>{totalUserCount, number}</em>"
+    "UserSwitcher.UserCount": "Kullanıcı {currentUserIndex} / {totalUserCount}"
   }
 }

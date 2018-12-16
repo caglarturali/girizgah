@@ -1,7 +1,7 @@
 [
   {
     "id": "UserSwitcher.UserCount",
-    "defaultMessage": "User <em>{currentUserIndex, number}</em> of <em>{totalUserCount, number}</em>"
+    "defaultMessage": "User {currentUserIndex} of {totalUserCount}"
   },
   {
     "id": "UserSwitcher.BackButton",

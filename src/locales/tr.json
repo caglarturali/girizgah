@@ -5,5 +5,5 @@
   "Power.Sleep": "Uykuya Al",
   "Login.SwitchButton": "KULLANICI DEĞİŞTİR",
   "UserSwitcher.BackButton": "GERİ",
-  "UserSwitcher.UserCount": "Kullanıcı <em>{currentUserIndex, number}</em> / <em>{totalUserCount, number}</em>"
+  "UserSwitcher.UserCount": "Kullanıcı {currentUserIndex} / {totalUserCount}"
 }
