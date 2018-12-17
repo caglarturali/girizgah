@@ -23,13 +23,7 @@ export function getWallpapers(directory) {
   // If we're in test mode, we stick to a static rotation of three default wallpapers.
   // In production, it is possible that a user will change what wallpapers are available.
   if (window.__debug === true) {
-    return [
-      'wallpaper-01.jpg',
-      'wallpaper-02.jpg',
-      'wallpaper-03.jpg',
-      'wallpaper-04.jpg',
-      'wallpaper-05.jpg'
-    ];
+    return ['wallpaper-01.jpg', 'wallpaper-02.jpg', 'wallpaper-03.jpg', 'wallpaper-04.jpg', 'wallpaper-05.jpg'];
   }
 
   let wallpapers;
@@ -44,12 +38,9 @@ export function getLogos() {
   // If we're in test mode, just return the default three.
   if (window.__debug === true) {
     return [
-      ['src/sample/logos/pardus.png', 'pardus.png'],
-      ['src/sample/logos/pardus-yellow.png', 'pardus-yellow.png'],
-      ['src/sample/logos/pardus-white.png', 'pardus-white.png'],
-      ['src/sample/logos/archlinux.png', 'archlinux.png'],
-      ['src/sample/logos/antergos.png', 'antergos.png'],
-      ['src/sample/logos/ubuntu.png', 'ubuntu.png']
+      ['src/sample/logos/pardus-01.png', 'pardus-01.png'],
+      ['src/sample/logos/pardus-02.png', 'pardus-02.png'],
+      ['src/sample/logos/pardus-03.png', 'pardus-03.png']
     ];
   }
 
