@@ -1,0 +1,22 @@
+[
+  {
+    "id": "Login.Notification.LoggedInAs",
+    "defaultMessage": "You are now logged in as {activeUserDisplayName} to {activeSessionName}."
+  },
+  {
+    "id": "Login.Notification.OnlyUser",
+    "defaultMessage": "You are the only user that is able to log in on this system."
+  },
+  {
+    "id": "Login.Notification.SwitchedToOnlyUser",
+    "defaultMessage": "User has been automatically switched to the only other user on this system."
+  },
+  {
+    "id": "Login.Notification.IncorrectPassword",
+    "defaultMessage": "Password incorrect, please try again."
+  },
+  {
+    "id": "Login.Notification.AutoLoginExpired",
+    "defaultMessage": "Autologin expired."
+  }
+]

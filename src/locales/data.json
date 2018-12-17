@@ -4,6 +4,11 @@
     "Power.Reboot": "Reboot",
     "Power.Hibernate": "Hibernate",
     "Power.Sleep": "Sleep",
+    "Login.Notification.LoggedInAs": "You are now logged in as {activeUserDisplayName} to {activeSessionName}.",
+    "Login.Notification.OnlyUser": "You are the only user that is able to log in on this system.",
+    "Login.Notification.SwitchedToOnlyUser": "User has been automatically switched to the only other user on this system.",
+    "Login.Notification.IncorrectPassword": "Password incorrect, please try again.",
+    "Login.Notification.AutoLoginExpired": "Autologin expired.",
     "SessionSelect.Back": "Back",
     "UserSwitcher.UserCount": "User {currentUserIndex} of {totalUserCount}",
     "UserSwitcher.BackButton": "BACK",
@@ -135,6 +140,11 @@
     "SystemOperations.Notification.Shutdown": "Kapatılıyor.",
     "SystemOperations.Notification.Hibernate": "Askıya alınıyor.",
     "SystemOperations.Notification.Restart": "Yeniden başlatılıyor.",
-    "SystemOperations.Notification.Suspend": "Uykuya alınıyor."
+    "SystemOperations.Notification.Suspend": "Uykuya alınıyor.",
+    "Login.Notification.LoggedInAs": "{activeUserDisplayName} kullanıcısı olarak {activeSessionName}'de oturum açtınız.",
+    "Login.Notification.OnlyUser": "Bu sistemde oturum açabilecek tek kullanıcı sizsiniz.",
+    "Login.Notification.SwitchedToOnlyUser": "Kullanıcı hesabı bu sistemde oturum açabilecek diğer kullanıcıya geçmiştir.",
+    "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
+    "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı."
   }
 }

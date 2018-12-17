@@ -65,5 +65,10 @@
   "SystemOperations.Notification.Shutdown": "Kapatılıyor.",
   "SystemOperations.Notification.Hibernate": "Askıya alınıyor.",
   "SystemOperations.Notification.Restart": "Yeniden başlatılıyor.",
-  "SystemOperations.Notification.Suspend": "Uykuya alınıyor."
+  "SystemOperations.Notification.Suspend": "Uykuya alınıyor.",
+  "Login.Notification.LoggedInAs": "{activeUserDisplayName} kullanıcısı olarak {activeSessionName}'de oturum açtınız.",
+  "Login.Notification.OnlyUser": "Bu sistemde oturum açabilecek tek kullanıcı sizsiniz.",
+  "Login.Notification.SwitchedToOnlyUser": "Kullanıcı hesabı bu sistemde oturum açabilecek diğer kullanıcıya geçmiştir.",
+  "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
+  "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı."
 }

@@ -12,11 +12,37 @@ import UserSwitchButton from './UserSwitcher/UserSwitchButton';
 import UserSwitcher from './UserSwitcher';
 import UserPanelForm from './Form';
 
+import { defineMessages } from 'react-intl';
+
 const FADE_IN_DURATION = 200;
 const ERROR_SHAKE_DURATION = 600;
 
 const CTRL_KEYCODE = 17;
 const A_KEYCODE = 65;
+
+// Define messages.
+const messages = defineMessages({
+  loggedInAs: {
+    id: 'Login.Notification.LoggedInAs',
+    defaultMessage: 'You are now logged in as {activeUserDisplayName} to {activeSessionName}.'
+  },
+  onlyUser: {
+    id: 'Login.Notification.OnlyUser',
+    defaultMessage: 'You are the only user that is able to log in on this system.'
+  },
+  switchedToOnlyUser: {
+    id: 'Login.Notification.SwitchedToOnlyUser',
+    defaultMessage: 'User has been automatically switched to the only other user on this system.'
+  },
+  incorrectPassword: {
+    id: 'Login.Notification.IncorrectPassword',
+    defaultMessage: 'Password incorrect, please try again.'
+  },
+  autoLoginExpired: {
+    id: 'Login.Notification.AutoLoginExpired',
+    defaultMessage: 'Autologin expired.'
+  }
+});
 
 class UserPicker extends React.Component {
   constructor(props) {
@@ -56,7 +82,7 @@ class UserPicker extends React.Component {
     };
 
     window.autologin_timer_expired = () => {
-      window.notifications.generate('Autologin expired.');
+      window.notifications.generate(window.formatMessage(messages.autoLoginExpired));
     };
 
     // Add a handler for Ctrl+A to prevent selection issues.
@@ -100,7 +126,10 @@ class UserPicker extends React.Component {
         this.rejectPassword();
       } else {
         window.notifications.generate(
-          `You are now logged in as ${this.props.activeUser.display_name} to ${this.props.activeSession.name}.`,
+          window.formatMessage(messages.loggedInAs, {
+            activeUserDisplayName: this.props.activeUser.display_name,
+            activeSessionName: this.props.activeSession.name
+          }),
           'success'
         );
         this.setState({
@@ -114,7 +143,7 @@ class UserPicker extends React.Component {
 
   handleSwitcherClick(event) {
     if (window.lightdm.users.length < 2) {
-      window.notifications.generate('You are the only user that is able to log in on this system.', 'error');
+      window.notifications.generate(window.formatMessage(messages.onlyUser), 'error');
       return false;
     } else if (window.lightdm.users.length === 2) {
       // No point in showing them the switcher if there is only one other user. Switch immediately.
@@ -123,7 +152,7 @@ class UserPicker extends React.Component {
       })[0];
 
       this.setActiveUser(otherUser, true);
-      window.notifications.generate('User has been automatically switched to the only other user on this system.');
+      window.notifications.generate(window.formatMessage(messages.switchedToOnlyUser));
     } else {
       this.setState({
         switcherActive: true
@@ -170,7 +199,7 @@ class UserPicker extends React.Component {
   }
 
   rejectPassword() {
-    window.notifications.generate('Password incorrect, please try again.', 'error');
+    window.notifications.generate(window.formatMessage(messages.incorrectPassword), 'error');
 
     this.setState({
       password: '',
