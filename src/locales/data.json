@@ -49,10 +49,17 @@
     "Settings.Style.GradientBottom": "Gradient-Bottom",
     "Settings.Style.ButtonColor": "Button Color",
     "Settings.Style.Username": "Username",
+    "Settings.Themes.Placeholder.ThemeName": "Theme Name",
+    "Settings.Themes.Saved": "Your theme has been saved.",
+    "Settings.Themes.Deleted": "Theme has been deleted!",
+    "Settings.Themes.EnterValidName": "Please enter a valid name for your theme!",
     "Settings.Themes.Preview": "Preview",
     "Settings.Themes.Delete": "Delete",
     "Settings.Themes.SaveAsTheme": "Save current settings as a theme?",
     "Settings.Themes.SaveTheme": "Save Theme",
+    "SettingsReducer.Notification.Reject": "Reverted to previous settings, no changes saved.",
+    "SettingsReducer.Notification.ApplyTheme": "Loaded {themeName} theme. Remember to save!",
+    "SettingsReducer.Notification.Save": "Settings saved.",
     "App.Greeting": "Hey there!",
     "Tip.SwitchWallpapers": "TIP: Click the logo to switch wallpapers.",
     "Tip.AccessSettings": "TIP: Access settings by hovering over the bottom left of your screen!"
@@ -117,6 +124,9 @@
     "Settings.Themes.Deleted": "Tema silindi!",
     "Settings.Themes.EnterValidName": "Lütfen tema için geçerli bir isim giriniz!",
     "Settings.Themes.Saved": "Tema kaydedildi.",
-    "Settings.Themes.Placeholder.ThemeName": "Tema Adı"
+    "Settings.Themes.Placeholder.ThemeName": "Tema Adı",
+    "SettingsReducer.Notification.Reject": "Önceki ayarlar yüklendi, değişiklikler kaydedilmedi.",
+    "SettingsReducer.Notification.ApplyTheme": "{themeName} teması yüklendi. Kaydetmeyi unutmayın!",
+    "SettingsReducer.Notification.Save": "Ayarlar kaydedildi."
   }
 }

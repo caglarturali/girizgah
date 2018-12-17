@@ -58,5 +58,8 @@
   "Settings.Themes.Deleted": "Tema silindi!",
   "Settings.Themes.EnterValidName": "Lütfen tema için geçerli bir isim giriniz!",
   "Settings.Themes.Saved": "Tema kaydedildi.",
-  "Settings.Themes.Placeholder.ThemeName": "Tema Adı"
+  "Settings.Themes.Placeholder.ThemeName": "Tema Adı",
+  "SettingsReducer.Notification.Reject": "Önceki ayarlar yüklendi, değişiklikler kaydedilmedi.",
+  "SettingsReducer.Notification.ApplyTheme": "{themeName} teması yüklendi. Kaydetmeyi unutmayın!",
+  "SettingsReducer.Notification.Save": "Ayarlar kaydedildi."
 }

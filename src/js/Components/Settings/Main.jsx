@@ -19,7 +19,7 @@ import { setPageZoom } from 'Utils/Utils';
 import { FormattedMessage } from 'react-intl';
 
 const SETTINGS_HEIGHT = 300;
-const SETTINGS_WIDTH = 600;
+const SETTINGS_WIDTH = 720;
 
 class Settings extends React.Component {
   constructor(props) {

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "SettingsReducer.Notification.Reject",
+    "defaultMessage": "Reverted to previous settings, no changes saved."
+  },
+  {
+    "id": "SettingsReducer.Notification.ApplyTheme",
+    "defaultMessage": "Loaded {themeName} theme. Remember to save!"
+  },
+  {
+    "id": "SettingsReducer.Notification.Save",
+    "defaultMessage": "Settings saved."
+  }
+]

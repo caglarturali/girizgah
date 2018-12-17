@@ -3,6 +3,24 @@ import * as Settings from '../Logic/Settings';
 import { setPageZoom } from '../Utils/Utils';
 import Glass from '../Themes/Glass';
 
+import { defineMessages } from 'react-intl';
+
+// Define messages.
+const messages = defineMessages({
+  reject: {
+    id: 'SettingsReducer.Notification.Reject',
+    defaultMessage: 'Reverted to previous settings, no changes saved.'
+  },
+  applyTheme: {
+    id: 'SettingsReducer.Notification.ApplyTheme',
+    defaultMessage: 'Loaded {themeName} theme. Remember to save!'
+  },
+  save: {
+    id: 'SettingsReducer.Notification.Save',
+    defaultMessage: 'Settings saved.'
+  }
+});
+
 export function addAdditionalSettings(state) {
   // Define our defaults
 
@@ -46,7 +64,7 @@ export const SettingsReducer = (state, action) => {
       var newSettings = { ...state.cachedSettings };
 
       // Create a notification
-      window.notifications.generate('Reverted to previous settings, no changes saved.', 'success');
+      window.notifications.generate(window.formatMessage(messages.reject), 'success');
 
       // This shouldn't be here. It is, though.
       setPageZoom(newSettings.page_zoom);
@@ -57,7 +75,7 @@ export const SettingsReducer = (state, action) => {
       var newSettings = { ...state.cachedSettings, ...action.theme };
 
       // Create a notification
-      window.notifications.generate(`Loaded ${action.name} theme. Remember to save!`, 'success');
+      window.notifications.generate(window.formatMessage(messages.applyTheme, { themeName: action.name }), 'success');
 
       // This shouldn't be here. It is, though.
       setPageZoom(newSettings.page_zoom);
@@ -74,7 +92,7 @@ export const SettingsReducer = (state, action) => {
       var newCache = { ...state.settings };
 
       // Create a notification
-      window.notifications.generate('Settings saved.', 'success');
+      window.notifications.generate(window.formatMessage(messages.save), 'success');
 
       return { ...state, cachedSettings: newCache };
 
