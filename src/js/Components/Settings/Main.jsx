@@ -16,6 +16,8 @@ import SaveDialogue from './SaveDialogue';
 
 import { setPageZoom } from 'Utils/Utils';
 
+import { FormattedMessage } from 'react-intl';
+
 const SETTINGS_HEIGHT = 300;
 const SETTINGS_WIDTH = 600;
 
@@ -86,18 +88,35 @@ class Settings extends React.Component {
   }
 
   generateCategories() {
-    let categories = ['General', 'Style', 'Themes'];
+    let categories = [
+      {
+        categoryName: 'General',
+        localeName: <FormattedMessage id="Settings.Category.General" defaultMessage="General" />
+      },
+      {
+        categoryName: 'Style',
+        localeName: <FormattedMessage id="Settings.Category.Style" defaultMessage="Style" />
+      },
+      {
+        categoryName: 'Themes',
+        localeName: <FormattedMessage id="Settings.Category.Themes" defaultMessage="Themes" />
+      }
+    ];
 
     let listItems = categories.map(category => {
       let classes = [];
 
-      if (category.toLowerCase() === this.state.selectedCategory) {
+      if (category.categoryName.toLowerCase() === this.state.selectedCategory) {
         classes.push('active');
       }
 
       return (
-        <li key={category} className={classes.join(' ')} onClick={this.handleCategoryClick.bind(this, category)}>
-          {category}
+        <li
+          key={category.categoryName}
+          className={classes.join(' ')}
+          onClick={this.handleCategoryClick.bind(this, category.categoryName)}
+        >
+          {category.localeName}
         </li>
       );
     });

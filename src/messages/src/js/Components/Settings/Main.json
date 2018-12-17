@@ -1,0 +1,14 @@
+[
+  {
+    "id": "Settings.Category.General",
+    "defaultMessage": "General"
+  },
+  {
+    "id": "Settings.Category.Style",
+    "defaultMessage": "Style"
+  },
+  {
+    "id": "Settings.Category.Themes",
+    "defaultMessage": "Themes"
+  }
+]
