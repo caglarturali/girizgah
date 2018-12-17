@@ -1,0 +1,78 @@
+[
+  {
+    "id": "Settings.Style.WindowAppearance",
+    "defaultMessage": "Window Appearance"
+  },
+  {
+    "id": "Settings.Style.BorderRadius",
+    "defaultMessage": "Border Radius"
+  },
+  {
+    "id": "Settings.Style.FontSize",
+    "defaultMessage": "Font-Size"
+  },
+  {
+    "id": "Settings.Style.DPIZoom",
+    "defaultMessage": "DPI Zoom"
+  },
+  {
+    "id": "Settings.Style.EyeCandy",
+    "defaultMessage": "Eye Candy"
+  },
+  {
+    "id": "Settings.Style.StaggeredAnimations",
+    "defaultMessage": "Staggered Animations"
+  },
+  {
+    "id": "Settings.Style.CommandPanel",
+    "defaultMessage": "Command Panel"
+  },
+  {
+    "id": "Settings.Style.IconsEnabled",
+    "defaultMessage": "Icons Enabled"
+  },
+  {
+    "id": "Settings.Style.TextAlign",
+    "defaultMessage": "Text Align"
+  },
+  {
+    "id": "Settings.Style.Background",
+    "defaultMessage": "Background"
+  },
+  {
+    "id": "Settings.Style.IconColor",
+    "defaultMessage": "Icon Color"
+  },
+  {
+    "id": "Settings.Style.TextColor",
+    "defaultMessage": "Text Color"
+  },
+  {
+    "id": "Settings.Style.LoginPanel",
+    "defaultMessage": "Login Panel"
+  },
+  {
+    "id": "Settings.Style.BorderEnabled",
+    "defaultMessage": "Border Enabled"
+  },
+  {
+    "id": "Settings.Style.BorderColor",
+    "defaultMessage": "Border Color"
+  },
+  {
+    "id": "Settings.Style.GradientTop",
+    "defaultMessage": "Gradient-Top"
+  },
+  {
+    "id": "Settings.Style.GradientBottom",
+    "defaultMessage": "Gradient-Bottom"
+  },
+  {
+    "id": "Settings.Style.ButtonColor",
+    "defaultMessage": "Button Color"
+  },
+  {
+    "id": "Settings.Style.Username",
+    "defaultMessage": "Username"
+  }
+]
