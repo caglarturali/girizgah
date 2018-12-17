@@ -1,0 +1,10 @@
+[
+  {
+    "id": "Settings.Revert",
+    "defaultMessage": "Revert"
+  },
+  {
+    "id": "Settings.Save",
+    "defaultMessage": "Save"
+  }
+]

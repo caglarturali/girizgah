@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
 
 import { connect } from 'react-redux';
 
@@ -19,10 +20,10 @@ export const SaveDialogue = props => {
   return (
     <div className="save-dialogue">
       <button className="settings-reject" onClick={rejectSettings.bind(this, props)}>
-        revert
+        <FormattedMessage id="Settings.Revert" defaultMessage="Revert" />
       </button>
       <button className="settings-save" onClick={saveSettings.bind(this, props)}>
-        save
+        <FormattedMessage id="Settings.Save" defaultMessage="Save" />
       </button>
     </div>
   );
