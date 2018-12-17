@@ -1,11 +1,4 @@
 import { defineMessages } from 'react-intl';
-import { intl } from '../../modules/IntlGlobalProvider';
-
-// Cumbersome, but required!
-let formatMessage;
-setTimeout(() => {
-  formatMessage = intl.formatMessage;
-}, 10);
 
 // Define messages.
 const messages = defineMessages({
@@ -29,17 +22,17 @@ export default class Notifications {
 
     // Greet user.
     setTimeout(() => {
-      this.generate(formatMessage(messages.greeting), 'success');
+      this.generate(window.formatMessage(messages.greeting), 'success');
     }, 100);
 
     // Only show in debug mode.
     if (window.__debug === true) {
       setTimeout(() => {
-        this.generate(formatMessage(messages.switchWallpapers));
+        this.generate(window.formatMessage(messages.switchWallpapers));
       }, 2000);
 
       setTimeout(() => {
-        this.generate(formatMessage(messages.accessSettings));
+        this.generate(window.formatMessage(messages.accessSettings));
       }, 5 * 1000);
     }
   }

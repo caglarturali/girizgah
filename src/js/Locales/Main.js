@@ -6,6 +6,7 @@ import { addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import tr from 'react-intl/locale-data/tr';
 import localeData from '../../locales/data.json';
+import { intl } from '../../modules/IntlGlobalProvider';
 
 addLocaleData([...en, ...tr]);
 
@@ -19,5 +20,10 @@ const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
 
 // Try full locale, try locale without region code, fallback to 'en'
 const messages = localeData[languageWithoutRegionCode] || localeData[language] || localeData.en;
+
+// Cumbersome, but required!
+setTimeout(() => {
+  window.formatMessage = intl.formatMessage;
+}, 10);
 
 export { language, messages };
