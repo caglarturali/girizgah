@@ -20,7 +20,6 @@ export function addAdditionalSettings(state) {
     font_scale: 1.0,
     staggered_animations_enabled: true,
     user_switcher_enabled: true,
-    // experimental_stars_enabled: false,
 
     // Default to glass
     ...Glass

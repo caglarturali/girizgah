@@ -35,11 +35,7 @@ export const StyleSection = props => {
 
           <h4>Eye Candy</h4>
           <hr />
-          {/*<Checkbox
-            name={'Experimental Stars'}
-            value={settings.experimental_stars_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'experimental_stars_enabled')}
-          />**/}
+          
           <Checkbox
             name={'Staggered Animations'}
             value={settings.staggered_animations_enabled}
