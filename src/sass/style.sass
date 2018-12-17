@@ -715,14 +715,14 @@ body
     height: 5%
     padding-top: 15px
 
-  .bottom .left, .bottom .right
+  .bottom .left, .bottom .right, .bottom .center
     float: left
 
     font-size: 0.75em
     font-weight: bold
     letter-spacing: 1px
 
-  .bottom .left
+  .bottom .left, .bottom .center
     color: rgba(255, 255, 255, 0.65)
 
     overflow: hidden
@@ -745,6 +745,10 @@ body
     transition: opacity 1s
 
     @extend .noselect
+
+  .bottom .center
+    text-align: center
+    width: 100%
 
   .bottom .clock.loaded
     opacity: 1
@@ -1015,9 +1019,6 @@ body
     padding: 15px
     width: 60%
 
-  .center
-    padding: 15px
-    width: 100%
 
 
 .settings-general .left
