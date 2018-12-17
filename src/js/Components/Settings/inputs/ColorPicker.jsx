@@ -50,7 +50,7 @@ export class ColorPicker extends React.Component {
     return (
       <li className="settings-item settings-color">
         <label htmlFor={elementID} title={this.props.name}>
-          {this.props.name}
+          {this.props.localeContent ? this.props.localeContent : this.props.name}
         </label>
         <div id={elementID} className={swatchContainerClasses.join(' ')}>
           <div className="swatch" onClick={this.handleOpen.bind(this)}>
@@ -70,7 +70,8 @@ export class ColorPicker extends React.Component {
 ColorPicker.propTypes = {
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  boundFunction: PropTypes.func.isRequired
+  boundFunction: PropTypes.func.isRequired,
+  localeContent: PropTypes.object.isRequired
 };
 
 export default ColorPicker;
