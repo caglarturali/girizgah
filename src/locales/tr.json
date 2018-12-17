@@ -11,5 +11,22 @@
   "Tip.SwitchWallpapers": "İPUCU: Arkaplanı değiştirmek için Pardus logosuna tıklayın!",
   "Tip.AccessSettings": "İPUCU: Ekranınızın sol alt köşesinde gezinerek ayarlara erişin!",
   "Settings.Revert": "Vazgeç",
-  "Settings.Save": "Kaydet"
+  "Settings.Save": "Kaydet",
+  "Settings.General.UserFunctionality": "Kullanıcı İşlevselliği",
+  "Settings.General.DateTime": "Tarih ve Saat",
+  "Settings.General.CommandVisibility": "Güç Seçenekleri",
+  "Settings.General.AvatarVisibility": "Profil Avatarı",
+  "Settings.General.HostnameVisibility": "Makine Adı",
+  "Settings.General.ShowUserSwitcher": "Kullanıcı Değiştirme Etkin",
+  "Settings.General.DateEnabled": "Tarih Etkin",
+  "Settings.General.DateFormat": "Tarih Formatı",
+  "Settings.General.TimeEnabled": "Saat Etkin",
+  "Settings.General.TimeFormat": "Saat Formatı",
+  "Settings.General.ShutdownEnabled": "Kapat Etkin",
+  "Settings.General.RebootEnabled": "Yeniden Başla Etkin",
+  "Settings.General.HibernateEnabled": "Askıya Al Etkin",
+  "Settings.General.SleepEnabled": "Uykuya Al Etkin",
+  "Settings.General.AvatarEnabled": "Profil Avatarı Etkin",
+  "Settings.General.BackgroundEnabled": "Arkaplan Etkin",
+  "Settings.General.HostnameEnabled": "Makine Adı Etkin"
 }

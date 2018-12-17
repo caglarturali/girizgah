@@ -1,0 +1,70 @@
+[
+  {
+    "id": "Settings.General.UserFunctionality",
+    "defaultMessage": "User Functionality"
+  },
+  {
+    "id": "Settings.General.ShowUserSwitcher",
+    "defaultMessage": "Show User Switcher"
+  },
+  {
+    "id": "Settings.General.DateTime",
+    "defaultMessage": "Date & Time"
+  },
+  {
+    "id": "Settings.General.DateEnabled",
+    "defaultMessage": "Date Enabled"
+  },
+  {
+    "id": "Settings.General.DateFormat",
+    "defaultMessage": "Date Format"
+  },
+  {
+    "id": "Settings.General.TimeEnabled",
+    "defaultMessage": "Time Enabled"
+  },
+  {
+    "id": "Settings.General.TimeFormat",
+    "defaultMessage": "Time Format"
+  },
+  {
+    "id": "Settings.General.CommandVisibility",
+    "defaultMessage": "Command Visibility"
+  },
+  {
+    "id": "Settings.General.ShutdownEnabled",
+    "defaultMessage": "Shutdown Enabled"
+  },
+  {
+    "id": "Settings.General.RebootEnabled",
+    "defaultMessage": "Reboot Enabled"
+  },
+  {
+    "id": "Settings.General.HibernateEnabled",
+    "defaultMessage": "Hibernate Enabled"
+  },
+  {
+    "id": "Settings.General.SleepEnabled",
+    "defaultMessage": "Sleep Enabled"
+  },
+  {
+    "id": "Settings.General.AvatarVisibility",
+    "defaultMessage": "Avatar Visibility"
+  },
+  {
+    "id": "Settings.General.AvatarEnabled",
+    "defaultMessage": "Avatar Enabled"
+  },
+  {
+    "id": "Settings.General.BackgroundEnabled",
+    "defaultMessage": "Background Enabled"
+  },
+  {
+    "id": "Settings.General.HostnameVisibility",
+    "defaultMessage": "Hostname Visibility"
+  },
+  {
+    "id": "Settings.General.HostnameEnabled",
+    "defaultMessage": "Hostname Enabled"
+  }
+]
