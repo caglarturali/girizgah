@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import Sidebar from './Sidebar';
 import UserPicker from './UserPicker';
 import Settings from 'Components/Settings';
+import Clock from 'Components/DateTimeDisplay/Clock';
 import DateTimeDisplay from 'Components/DateTimeDisplay';
 import SettingsToggler from 'Components/SettingsToggler';
 
@@ -37,6 +38,7 @@ class LoginWindow extends React.Component {
         <UserPicker />
       </div>,
 
+      <Clock key="time-display" />,
       <DateTimeDisplay key="date-display" />,
       <Settings key="settings-window" />,
       <SettingsToggler key="settings-button" />

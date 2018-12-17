@@ -3,6 +3,7 @@
 // Just a clock.
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Strftime from 'strftime';
 import PropTypes from 'prop-types';
 
@@ -38,7 +39,7 @@ class Clock extends React.Component {
   }
 
   render() {
-    let classes = ['right', 'clock'];
+    let classes = ['clock'];
     let currentTime = this.state.formattedTime;
 
     if (this.state.initialized === true && this.props.settings.time_enabled === true) {
@@ -47,7 +48,10 @@ class Clock extends React.Component {
       classes.push('invisible');
     }
 
-    return <div className={classes.join(' ')}>{currentTime}</div>;
+    return ReactDOM.createPortal(
+      <div className={classes.join(' ')}>{currentTime}</div>,
+      document.getElementById('time-display')
+    );
   }
 }
 
