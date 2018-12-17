@@ -1,0 +1,18 @@
+[
+  {
+    "id": "Settings.Themes.Preview",
+    "defaultMessage": "Preview"
+  },
+  {
+    "id": "Settings.Themes.Delete",
+    "defaultMessage": "Delete"
+  },
+  {
+    "id": "Settings.Themes.SaveAsTheme",
+    "defaultMessage": "Save current settings as a theme?"
+  },
+  {
+    "id": "Settings.Themes.SaveTheme",
+    "defaultMessage": "Save Theme"
+  }
+]

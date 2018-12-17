@@ -50,5 +50,9 @@
   "Settings.Style.GradientTop": "Eğim Üst Rengi",
   "Settings.Style.GradientBottom": "Eğim Alt Rengi",
   "Settings.Style.ButtonColor": "Buton Rengi",
-  "Settings.Style.Username": "Kullanıcı Adı"
+  "Settings.Style.Username": "Kullanıcı Adı",
+  "Settings.Themes.SaveAsTheme": "Mevcut ayarları tema olarak kaydet?",
+  "Settings.Themes.SaveTheme": "Temayı Kaydet",
+  "Settings.Themes.Preview": "Önizle",
+  "Settings.Themes.Delete": "Sil"
 }

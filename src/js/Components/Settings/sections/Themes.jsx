@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import * as Settings from 'Logic/Settings';
 import DefaultThemes from '../DefaultThemes';
 
+import { FormattedMessage } from 'react-intl';
+
 class Theme extends React.Component {
   constructor(props) {
     super(props);
@@ -38,10 +40,12 @@ class Theme extends React.Component {
       <div className="theme">
         <div className="upper">
           <h5 className="theme-name">{this.props.name}</h5>
-          <button onClick={this.props.loadTheme.bind(this, this.props.name, this.props.theme)}>preview</button>
+          <button onClick={this.props.loadTheme.bind(this, this.props.name, this.props.theme)}>
+            <FormattedMessage id="Settings.Themes.Preview" defaultMessage="Preview" />
+          </button>
           <If condition={isDefaultTheme}>
             <button className="delete" onClick={this.props.deleteTheme.bind(this, this.props.name)}>
-              delete
+              <FormattedMessage id="Settings.Themes.Delete" defaultMessage="Delete" />
             </button>
           </If>
         </div>
@@ -117,7 +121,9 @@ export class SettingsThemes extends React.Component {
     return (
       <div className="settings-themes">
         <div className="theme-saver">
-          <p>Save current settings as a theme?</p>
+          <p>
+            <FormattedMessage id="Settings.Themes.SaveAsTheme" defaultMessage="Save current settings as a theme?" />
+          </p>
           <input
             type="text"
             name="theme-name"
@@ -126,7 +132,7 @@ export class SettingsThemes extends React.Component {
             ref={node => (this.nodes.themeName = node)}
           />
           <button className="save-theme" onClick={this.handleSaveTheme.bind(this)}>
-            save theme
+            <FormattedMessage id="Settings.Themes.SaveTheme" defaultMessage="Save Theme" />
           </button>
         </div>
         <div className="theme-list">{themeItems}</div>

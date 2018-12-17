@@ -49,6 +49,10 @@
     "Settings.Style.GradientBottom": "Gradient-Bottom",
     "Settings.Style.ButtonColor": "Button Color",
     "Settings.Style.Username": "Username",
+    "Settings.Themes.Preview": "Preview",
+    "Settings.Themes.Delete": "Delete",
+    "Settings.Themes.SaveAsTheme": "Save current settings as a theme?",
+    "Settings.Themes.SaveTheme": "Save Theme",
     "App.Greeting": "Hey there!",
     "Tip.SwitchWallpapers": "TIP: Click the logo to switch wallpapers.",
     "Tip.AccessSettings": "TIP: Access settings by hovering over the bottom left of your screen!"
@@ -105,6 +109,10 @@
     "Settings.Style.GradientTop": "Eğim Üst Rengi",
     "Settings.Style.GradientBottom": "Eğim Alt Rengi",
     "Settings.Style.ButtonColor": "Buton Rengi",
-    "Settings.Style.Username": "Kullanıcı Adı"
+    "Settings.Style.Username": "Kullanıcı Adı",
+    "Settings.Themes.SaveAsTheme": "Mevcut ayarları tema olarak kaydet?",
+    "Settings.Themes.SaveTheme": "Temayı Kaydet",
+    "Settings.Themes.Preview": "Önizle",
+    "Settings.Themes.Delete": "Sil"
   }
 }
