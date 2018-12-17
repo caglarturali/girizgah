@@ -54,5 +54,9 @@
   "Settings.Themes.SaveAsTheme": "Mevcut ayarları tema olarak kaydet?",
   "Settings.Themes.SaveTheme": "Temayı Kaydet",
   "Settings.Themes.Preview": "Önizle",
-  "Settings.Themes.Delete": "Sil"
+  "Settings.Themes.Delete": "Sil",
+  "Settings.Themes.Deleted": "Tema silindi!",
+  "Settings.Themes.EnterValidName": "Lütfen tema için geçerli bir isim giriniz!",
+  "Settings.Themes.Saved": "Tema kaydedildi.",
+  "Settings.Themes.Placeholder.ThemeName": "Tema Adı"
 }

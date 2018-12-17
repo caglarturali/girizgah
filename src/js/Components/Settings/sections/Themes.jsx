@@ -6,7 +6,27 @@ import { connect } from 'react-redux';
 import * as Settings from 'Logic/Settings';
 import DefaultThemes from '../DefaultThemes';
 
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, defineMessages } from 'react-intl';
+
+// Define messages.
+const messages = defineMessages({
+  placeholderThemeName: {
+    id: 'Settings.Themes.Placeholder.ThemeName',
+    defaultMessage: 'Theme Name'
+  },
+  themeSaved: {
+    id: 'Settings.Themes.Saved',
+    defaultMessage: 'Your theme has been saved.'
+  },
+  themeDeleted: {
+    id: 'Settings.Themes.Deleted',
+    defaultMessage: 'Theme has been deleted!'
+  },
+  enterValidName: {
+    id: 'Settings.Themes.EnterValidName',
+    defaultMessage: 'Please enter a valid name for your theme!'
+  }
+});
 
 class Theme extends React.Component {
   constructor(props) {
@@ -80,7 +100,7 @@ export class SettingsThemes extends React.Component {
       themes: { ...Settings.getUserThemes(), ...DefaultThemes }
     });
 
-    window.notifications.generate(`Theme has been deleted!`, 'success');
+    window.notifications.generate(window.formatMessage(messages.themeDeleted), 'success');
   }
 
   handleLoadTheme(themeName, theme) {
@@ -97,7 +117,7 @@ export class SettingsThemes extends React.Component {
 
     let themeName = this.nodes.themeName.value.trim();
     if (!themeName) {
-      window.notifications.generate(`Please enter a valid name for your theme!`, 'error');
+      window.notifications.generate(window.formatMessage(messages.enterValidName), 'error');
       return;
     }
 
@@ -107,7 +127,7 @@ export class SettingsThemes extends React.Component {
       themes: { ...Settings.getUserThemes(), ...DefaultThemes }
     });
 
-    window.notifications.generate(`Your theme has been saved.`, 'success');
+    window.notifications.generate(window.formatMessage(messages.themeSaved), 'success');
   }
 
   render() {
@@ -132,7 +152,7 @@ export class SettingsThemes extends React.Component {
             type="text"
             name="theme-name"
             defaultValue=""
-            placeholder="Theme Name"
+            placeholder={window.formatMessage(messages.placeholderThemeName)}
             ref={node => (this.nodes.themeName = node)}
           />
           <button className="save-theme" onClick={this.handleSaveTheme.bind(this)}>

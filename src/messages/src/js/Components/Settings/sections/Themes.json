@@ -1,5 +1,21 @@
 [
   {
+    "id": "Settings.Themes.Placeholder.ThemeName",
+    "defaultMessage": "Theme Name"
+  },
+  {
+    "id": "Settings.Themes.Saved",
+    "defaultMessage": "Your theme has been saved."
+  },
+  {
+    "id": "Settings.Themes.Deleted",
+    "defaultMessage": "Theme has been deleted!"
+  },
+  {
+    "id": "Settings.Themes.EnterValidName",
+    "defaultMessage": "Please enter a valid name for your theme!"
+  },
+  {
     "id": "Settings.Themes.Preview",
     "defaultMessage": "Preview"
   },
