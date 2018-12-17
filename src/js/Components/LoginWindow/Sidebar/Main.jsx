@@ -73,7 +73,7 @@ class Sidebar extends React.Component {
     let settings = this.props.settings;
 
     let hostname = window.lightdm.hostname;
-    let hostnameClasses = ['left', 'hostname'];
+    let hostnameClasses = ['center', 'hostname'];
     let hostNameDisabled = settings.hostname_enabled === false;
 
     let commands = this.getEnabledCommands();
