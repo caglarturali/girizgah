@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 
 import * as SystemOperations from 'Logic/SystemOperations';
 import WallpaperSwitcher from './WallpaperSwitcher';
-import Clock from './Clock';
 import List from './List';
 
 import { FormattedMessage } from 'react-intl';
@@ -93,7 +92,6 @@ class Sidebar extends React.Component {
         <List enabledCommands={commands} handleCommand={this.handleCommand.bind(this)} />
         <div className="bottom">
           <div className={hostnameClasses.join(' ')}>{hostname}</div>
-          <Clock />
         </div>
       </div>
     );
