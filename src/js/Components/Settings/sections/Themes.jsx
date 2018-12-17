@@ -95,7 +95,11 @@ export class SettingsThemes extends React.Component {
     e.preventDefault();
     e.stopPropagation();
 
-    let themeName = this.nodes.themeName.value;
+    let themeName = this.nodes.themeName.value.trim();
+    if (!themeName) {
+      window.notifications.generate(`Please enter a valid name for your theme!`, 'error');
+      return;
+    }
 
     Settings.saveTheme(themeName, this.props.settings);
 
