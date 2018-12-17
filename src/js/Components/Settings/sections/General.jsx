@@ -4,13 +4,14 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
 import { connect } from 'react-redux';
 
 import * as FileOperations from 'Logic/FileOperations';
 import TextField from '../inputs/TextField';
 import Checkbox from '../inputs/Checkbox';
+
+import { FormattedMessage } from 'react-intl';
 
 const onLogoChange = (props, e) => {
   props.dispatch({
