@@ -1,0 +1,10 @@
+[
+  {
+    "id": "WallpaperSwitcher.Notification.Saved",
+    "defaultMessage": "This wallpaper has been saved as your default background."
+  },
+  {
+    "id": "WallpaperSwitcher.Notification.Reset",
+    "defaultMessage": "Wallpaper reset to default, no changes saved."
+  }
+]

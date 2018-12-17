@@ -11,6 +11,20 @@ import { connect } from 'react-redux';
 import * as FileOperations from 'Logic/FileOperations';
 import * as Settings from 'Logic/Settings';
 
+import { defineMessages } from 'react-intl';
+
+// Define messages.
+const messages = defineMessages({
+  saved: {
+    id: 'WallpaperSwitcher.Notification.Saved',
+    defaultMessage: 'This wallpaper has been saved as your default background.'
+  },
+  reset: {
+    id: 'WallpaperSwitcher.Notification.Reset',
+    defaultMessage: 'Wallpaper reset to default, no changes saved.'
+  }
+});
+
 const FADEOUT_TIME = 600;
 
 class WallpaperSwitcher extends React.Component {
@@ -61,7 +75,7 @@ class WallpaperSwitcher extends React.Component {
 
     // Due diligence.
     Settings.saveSetting('wallpaper', selectedWallpaper);
-    window.notifications.generate('This wallpaper has been saved as your default background.', 'success');
+    window.notifications.generate(window.formatMessage(messages.saved), 'success');
 
     // Reset switcher state
     switcher.active = false;
@@ -124,7 +138,7 @@ class WallpaperSwitcher extends React.Component {
 
     this.setWallpaper(savedWallpaper);
 
-    window.notifications.generate('Wallpaper reset to default, no changes saved.');
+    window.notifications.generate(window.formatMessage(messages.reset));
   }
 
   setWallpaper(newWallpaper, preloadedWallpaper = false) {

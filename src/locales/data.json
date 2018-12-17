@@ -4,6 +4,8 @@
     "Power.Reboot": "Reboot",
     "Power.Hibernate": "Hibernate",
     "Power.Sleep": "Sleep",
+    "WallpaperSwitcher.Notification.Saved": "This wallpaper has been saved as your default background.",
+    "WallpaperSwitcher.Notification.Reset": "Wallpaper reset to default, no changes saved.",
     "Login.Notification.LoggedInAs": "You are now logged in as {activeUserDisplayName} to {activeSessionName}.",
     "Login.Notification.OnlyUser": "You are the only user that is able to log in on this system.",
     "Login.Notification.SwitchedToOnlyUser": "User has been automatically switched to the only other user on this system.",
@@ -145,6 +147,8 @@
     "Login.Notification.OnlyUser": "Bu sistemde oturum açabilecek tek kullanıcı sizsiniz.",
     "Login.Notification.SwitchedToOnlyUser": "Kullanıcı hesabı bu sistemde oturum açabilecek diğer kullanıcıya geçmiştir.",
     "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
-    "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı."
+    "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı.",
+    "WallpaperSwitcher.Notification.Saved": "Bu duvar kağıdı varsayılan arka plan olarak kaydedildi.",
+    "WallpaperSwitcher.Notification.Reset": "Duvar kağıdı varsayılana ayarlandı, değişiklikler kaydedilmedi."
   }
 }
