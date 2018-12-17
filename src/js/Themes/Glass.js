@@ -15,7 +15,7 @@ export default {
   command_text_align: 'left',
   style_command_background_color: 'hsla(0, 2%, 98%, 0.29)',
   style_command_icon_color: 'hsl(182, 79%, 58%)',
-  style_command_text_color: 'hsla(0, 0%, 90%, 0.9)',
+  style_command_text_color: 'hsla(0, 0%, 100%, 0.9)',
   style_login_border_color: 'hsla(0, 0%, 0%, 0)',
   style_login_border_enabled: false,
   style_login_button_color: 'hsla(0, 0%, 0%, 0.45)',
