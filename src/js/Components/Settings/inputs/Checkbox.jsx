@@ -5,14 +5,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-export const Checkbox = ({ name, value, boundFunction }) => {
+export const Checkbox = ({ name, value, boundFunction, localeContent }) => {
   let elementID = `option-${name.replace(' ', '-')}`;
 
   return (
     <li className="settings-item">
       <input id={elementID} type="checkbox" checked={value} onChange={boundFunction} />
       <label htmlFor={elementID}>
-        {name}
+        {localeContent ? localeContent : name}
         <div className="fake-checkbox" onChange={boundFunction} />
       </label>
     </li>
@@ -22,7 +22,8 @@ export const Checkbox = ({ name, value, boundFunction }) => {
 Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.bool.isRequired,
-  boundFunction: PropTypes.func.isRequired
+  boundFunction: PropTypes.func.isRequired,
+  localeContent: PropTypes.object.isRequired
 };
 
 export default Checkbox;
