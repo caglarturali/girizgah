@@ -57,6 +57,10 @@
     "Settings.Themes.Delete": "Delete",
     "Settings.Themes.SaveAsTheme": "Save current settings as a theme?",
     "Settings.Themes.SaveTheme": "Save Theme",
+    "SystemOperations.Notification.Shutdown": "Shutting down.",
+    "SystemOperations.Notification.Hibernate": "Hibernating system.",
+    "SystemOperations.Notification.Restart": "Rebooting system.",
+    "SystemOperations.Notification.Suspend": "Suspending system.",
     "SettingsReducer.Notification.Reject": "Reverted to previous settings, no changes saved.",
     "SettingsReducer.Notification.ApplyTheme": "Loaded {themeName} theme. Remember to save!",
     "SettingsReducer.Notification.Save": "Settings saved.",
@@ -127,6 +131,10 @@
     "Settings.Themes.Placeholder.ThemeName": "Tema Adı",
     "SettingsReducer.Notification.Reject": "Önceki ayarlar yüklendi, değişiklikler kaydedilmedi.",
     "SettingsReducer.Notification.ApplyTheme": "{themeName} teması yüklendi. Kaydetmeyi unutmayın!",
-    "SettingsReducer.Notification.Save": "Ayarlar kaydedildi."
+    "SettingsReducer.Notification.Save": "Ayarlar kaydedildi.",
+    "SystemOperations.Notification.Shutdown": "Kapatılıyor.",
+    "SystemOperations.Notification.Hibernate": "Askıya alınıyor.",
+    "SystemOperations.Notification.Restart": "Yeniden başlatılıyor.",
+    "SystemOperations.Notification.Suspend": "Uykuya alınıyor."
   }
 }

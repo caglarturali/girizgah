@@ -3,6 +3,28 @@
 // Wraps LightDM system operations, and handles the heavy
 // lifting of the more complex LightDM requests.
 
+import { defineMessages } from 'react-intl';
+
+// Define messages.
+const messages = defineMessages({
+  shutdown: {
+    id: 'SystemOperations.Notification.Shutdown',
+    defaultMessage: 'Shutting down.'
+  },
+  hibernate: {
+    id: 'SystemOperations.Notification.Hibernate',
+    defaultMessage: 'Hibernating system.'
+  },
+  restart: {
+    id: 'SystemOperations.Notification.Restart',
+    defaultMessage: 'Rebooting system.'
+  },
+  suspend: {
+    id: 'SystemOperations.Notification.Suspend',
+    defaultMessage: 'Suspending system.'
+  }
+});
+
 function executeCommand(message, boundFunction) {
   window.notifications.generate(message);
 
@@ -16,13 +38,13 @@ function executeCommand(message, boundFunction) {
 export function handleCommand(command) {
   // What the hell is this, right?
   if (command === 'shutdown' && window.lightdm.can_shutdown) {
-    return executeCommand('Shutting down', window.lightdm.shutdown);
+    return executeCommand(window.formatMessage(messages.shutdown), window.lightdm.shutdown);
   } else if (command === 'hibernate' && window.lightdm.can_hibernate) {
-    return executeCommand('Hibernating system.', window.lightdm.hibernate);
+    return executeCommand(window.formatMessage(messages.hibernate), window.lightdm.hibernate);
   } else if (command === 'reboot' && window.lightdm.can_restart) {
-    return executeCommand('Rebooting system.', window.lightdm.restart);
+    return executeCommand(window.formatMessage(messages.restart), window.lightdm.restart);
   } else if (command === 'sleep' && window.lightdm.can_suspend) {
-    return executeCommand('Suspending system.', window.lightdm.suspend);
+    return executeCommand(window.formatMessage(messages.suspend), window.lightdm.suspend);
   }
 
   // If we have gotten this far, it's because the command is disabled or doesn't exist.

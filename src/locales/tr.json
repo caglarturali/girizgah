@@ -61,5 +61,9 @@
   "Settings.Themes.Placeholder.ThemeName": "Tema Adı",
   "SettingsReducer.Notification.Reject": "Önceki ayarlar yüklendi, değişiklikler kaydedilmedi.",
   "SettingsReducer.Notification.ApplyTheme": "{themeName} teması yüklendi. Kaydetmeyi unutmayın!",
-  "SettingsReducer.Notification.Save": "Ayarlar kaydedildi."
+  "SettingsReducer.Notification.Save": "Ayarlar kaydedildi.",
+  "SystemOperations.Notification.Shutdown": "Kapatılıyor.",
+  "SystemOperations.Notification.Hibernate": "Askıya alınıyor.",
+  "SystemOperations.Notification.Restart": "Yeniden başlatılıyor.",
+  "SystemOperations.Notification.Suspend": "Uykuya alınıyor."
 }

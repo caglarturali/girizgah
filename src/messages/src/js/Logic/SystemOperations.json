@@ -1,0 +1,18 @@
+[
+  {
+    "id": "SystemOperations.Notification.Shutdown",
+    "defaultMessage": "Shutting down."
+  },
+  {
+    "id": "SystemOperations.Notification.Hibernate",
+    "defaultMessage": "Hibernating system."
+  },
+  {
+    "id": "SystemOperations.Notification.Restart",
+    "defaultMessage": "Rebooting system."
+  },
+  {
+    "id": "SystemOperations.Notification.Suspend",
+    "defaultMessage": "Suspending system."
+  }
+]
