@@ -7,8 +7,6 @@ This project is a fork of [Aether](https://noisek.github.io/Aether/) and under a
 
 :heavy_check_mark: Pardus için LightDM WebKit teması.
 
-:heavy_check_mark: LightDM WebKit Theme for Pardus Linux.
-
 Girizgah, [Pardus Giriş Ekranı Tasarım Yarışması](https://forum.pardus.org.tr/t/giris-ekrani-tasarim-yarismasi-duyurusu/8559) için geliştirilmekte olan bir projedir. Ekran görüntüleri ve projenin durumu hakkında ayrıntılı bilgiler için takipte kalınız.
 
 **Canlı önizlemeye [şuradan](https://caglarturali.github.io/Girizgah/) ulaşabilirsiniz.**
