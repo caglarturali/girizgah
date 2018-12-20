@@ -6,7 +6,7 @@
   "scripts": {
     "test": "./node_modules/.bin/eslint src/es6/**",
     "build": "webpack --progress --colors --env.production",
-    "build:langs": "npm run package:langs && webpack --progress --colors --env.production && npm run package:langs",
+    "build:langs": "npm run package:langs && npm run build && npm run package:langs",
     "package:langs": "NODE_ENV='production' babel-node src/scripts/mergeMessages.js",
     "build:dev": "webpack --progress --colors --env.development",
     "watch": "webpack --progress --colors --watch --env.development",
