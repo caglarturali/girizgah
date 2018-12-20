@@ -44,7 +44,7 @@ class LoginWindow extends React.Component {
       </div>,
 
       <Clock key="time-display" />,
-      <DateTimeDisplay key="date-display" />,
+      <DateTimeDisplay key="date-display" language={this.props.language} />,
       <Settings key="settings-window" />,
       <SettingsToggler key="settings-button" />
     ];
@@ -52,7 +52,8 @@ class LoginWindow extends React.Component {
 }
 
 LoginWindow.propTypes = {
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
+  language: PropTypes.string.isRequired
 };
 
 export default connect(

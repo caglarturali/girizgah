@@ -36,7 +36,7 @@ export default function Main() {
     <Provider store={store}>
       <IntlProvider locale={language} messages={messages}>
         <IntlGlobalProvider>
-          <LoginWindow />
+          <LoginWindow language={language} />
         </IntlGlobalProvider>
       </IntlProvider>
     </Provider>,
