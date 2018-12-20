@@ -21,6 +21,12 @@ export const StyleSection = props => {
             <FormattedMessage id="Settings.Style.WindowAppearance" defaultMessage="Window Appearance" />
           </h4>
           <hr />
+          <Checkbox
+            name={'Box Shadow'}
+            value={settings.window_box_shadow_enabled}
+            boundFunction={props.settingsToggleBinary.bind(this, 'window_box_shadow_enabled')}
+            localeContent={<FormattedMessage id="Settings.Style.WindowShadow" defaultMessage="Box Shadow" />}
+          />
           <TextField
             name={'Border Radius'}
             value={settings.window_border_radius}

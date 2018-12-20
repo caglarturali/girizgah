@@ -4,6 +4,10 @@
     "defaultMessage": "Window Appearance"
   },
   {
+    "id": "Settings.Style.WindowShadow",
+    "defaultMessage": "Box Shadow"
+  },
+  {
     "id": "Settings.Style.BorderRadius",
     "defaultMessage": "Border Radius"
   },

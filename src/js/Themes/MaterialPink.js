@@ -24,5 +24,6 @@ export default {
   style_login_gradient_bottom_color: 'hsl(340, 82%, 52%)',
   style_login_username_color: 'hsla(0, 100%, 100%, 1)',
   window_border_radius: '4px',
-  window_font_size: '1em'
+  window_font_size: '1em',
+  window_box_shadow_enabled: true
 };
