@@ -1,7 +1,7 @@
 /* eslint { no-redeclare: 0 } */
 import * as Settings from '../Logic/Settings';
 import { setPageZoom } from '../Utils/Utils';
-import Glass from '../Themes/Glass';
+import DarkGlass from '../Themes/DarkGlass';
 
 import { defineMessages } from 'react-intl';
 
@@ -39,8 +39,8 @@ export function addAdditionalSettings(state) {
     staggered_animations_enabled: true,
     user_switcher_enabled: true,
 
-    // Default to glass
-    ...Glass
+    // Default to dark glass
+    ...DarkGlass
   };
 
   let settings = {};
