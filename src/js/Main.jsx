@@ -18,7 +18,7 @@ import { language, messages } from './Locales';
 
 export default function Main() {
   let initialState = getDefaultState();
-  initialState = addAdditionalSettings(initialState);
+  initialState = addAdditionalSettings(initialState, language);
 
   let store;
 

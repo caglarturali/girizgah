@@ -21,13 +21,20 @@ const messages = defineMessages({
   }
 });
 
-export function addAdditionalSettings(state) {
+export function addAdditionalSettings(state, language = 'tr') {
   // Define our defaults
 
   let distroDefault =
     window.__debug === true
       ? 'src/sample/logos/pardus-01.png'
       : '/usr/share/lightdm-webkit/themes/lightdm-webkit-theme-girizgah/src/img/logos/pardus.png';
+
+  let dateFormatString;
+  if (language.toLowerCase() === 'tr' || language.toLowerCase().includes('tr')) {
+    dateFormatString = '<em>%A</em>, <em>%d</em> <em>%B</em> <em>%Y</em>';
+  } else {
+    dateFormatString = '<em>%A</em>, the <em>%o</em> of <em>%B</em>';
+  }
 
   let defaults = {
     active: false,
@@ -38,6 +45,8 @@ export function addAdditionalSettings(state) {
     font_scale: 1.0,
     staggered_animations_enabled: true,
     user_switcher_enabled: true,
+    date_format: dateFormatString,
+    time_format: '%H:%M',
 
     // Default to dark glass
     ...DarkGlass
