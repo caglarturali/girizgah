@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/eslint src/es6/**",
-    "build": "npm run build:langs && webpack --progress --colors --env.production",
+    "build": "npm run build:langs && webpack --progress --colors --env.production && npm run build:langs",
     "build:langs": "NODE_ENV='production' babel-node src/scripts/mergeMessages.js",
     "build:dev": "webpack --progress --colors --env.development",
     "watch": "webpack --progress --colors --watch --env.development",
