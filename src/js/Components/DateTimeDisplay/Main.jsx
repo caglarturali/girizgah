@@ -9,6 +9,17 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
+// Decide locale.
+const language = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage;
+const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
+
+let strftime;
+if (languageWithoutRegionCode === 'tr' || language.includes('tr')) {
+  strftime = Strftime.localizeByIdentifier('tr_TR');
+} else {
+  strftime = Strftime.localizeByIdentifier('en_US');
+}
+
 class DateDisplay extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +40,7 @@ class DateDisplay extends React.Component {
   setDate() {
     this.setState({
       initialized: true,
-      formattedDate: Strftime(this.props.settings.date_format)
+      formattedDate: strftime(this.props.settings.date_format)
     });
 
     setTimeout(() => {
