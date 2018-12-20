@@ -32,8 +32,13 @@ class LoginWindow extends React.Component {
       'font-size': settings.window_font_size
     });
 
+    let boxShadow = '';
+    if (settings.window_box_shadow_enabled) {
+      boxShadow = 'box-shadow';
+    }
+
     return [
-      <div className={`login-window ${style}`} key="login-window">
+      <div className={`login-window ${style} ${boxShadow}`} key="login-window">
         <Sidebar />
         <UserPicker />
       </div>,
