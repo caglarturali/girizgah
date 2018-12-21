@@ -31,9 +31,9 @@ export function addAdditionalSettings(state, language = 'tr') {
 
   let dateFormatString;
   if (language.toLowerCase() === 'tr' || language.toLowerCase().includes('tr')) {
-    dateFormatString = '<em>%A</em>, <em>%d</em> <em>%B</em> <em>%Y</em>';
+    dateFormatString = '%d %B %Y %A';
   } else {
-    dateFormatString = '<em>%A</em>, the <em>%o</em> of <em>%B</em>';
+    dateFormatString = '%A, the %o of %B';
   }
 
   let defaults = {
