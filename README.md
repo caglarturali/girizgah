@@ -12,6 +12,7 @@ Girizgah, [Pardus Giriş Ekranı Tasarım Yarışması](https://forum.pardus.org
 **Canlı önizlemeye [şuradan](https://caglarturali.github.io/Girizgah/) ulaşabilirsiniz.**
 
 ## Ekran görüntüsü
+Ekran görüntüsü projenin son halinden farklılık gösterebilir!
 ![Gif yüklenirken bekleyin..](../gh-files/screenshots/screen-recording.gif)
 
 ## Özellikler
