@@ -12,7 +12,7 @@ const messages = defineMessages({
   },
   accessSettings: {
     id: 'Tip.AccessSettings',
-    defaultMessage: 'TIP: Access settings by hovering over the bottom left of your screen!'
+    defaultMessage: 'TIP: Access settings by hovering over the top left of your screen!'
   }
 });
 

@@ -74,7 +74,7 @@
     "SettingsReducer.Notification.Save": "Settings saved.",
     "App.Greeting": "Hey there!",
     "Tip.SwitchWallpapers": "TIP: Click the logo to switch wallpapers.",
-    "Tip.AccessSettings": "TIP: Access settings by hovering over the bottom left of your screen!"
+    "Tip.AccessSettings": "TIP: Access settings by hovering over the top left of your screen!"
   },
   "tr": {
     "Power.Shutdown": "Kapat",
@@ -87,7 +87,7 @@
     "Login.SwitchButton": "KULLANICI DEĞİŞTİR",
     "App.Greeting": "Hoşgeldiniz!",
     "Tip.SwitchWallpapers": "İPUCU: Arkaplanı değiştirmek için Pardus logosuna tıklayın!",
-    "Tip.AccessSettings": "İPUCU: Ekranınızın sol alt köşesinde gezinerek ayarlara erişin!",
+    "Tip.AccessSettings": "İPUCU: Ekranınızın sol üst köşesinde gezinerek ayarlara erişin!",
     "Settings.Revert": "Vazgeç",
     "Settings.Save": "Kaydet",
     "Settings.Category.General": "Genel",
