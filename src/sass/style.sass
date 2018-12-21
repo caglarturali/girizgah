@@ -102,9 +102,11 @@ body
   width: 100%
 
   .notification
-    color: #2f0909
-    background: rgba(252,237,238,0.75)
-    border: 1px solid rgba(255, 255, 255, 0.15)
+    color: #f2f2f2
+    background: rgba(0, 0, 0, 0.6)
+    border-radius: 2px
+
+    font-weight: 500
 
     position: relative
     top: -200px
@@ -112,20 +114,18 @@ body
     padding: 15px
     margin: 0 auto 25px auto
 
-    width: 80vw
+    width: 70vw
 
     z-index: 3
 
     animation: drop-in-notifications 0.5s forwards
-    border-radius: 2px
     transition: opacity 0.5s
 
     &.error
-      color: #fff
-      background: rgba(180, 30, 30, 0.65)
+      border-left: 10px solid rgba(222, 56, 56, 0.85)
 
     &.success
-      background: rgba(120, 255, 64, 0.65)
+      border-left: 10px solid rgba(120, 255, 64, 0.85)
 
     &.fadeout
       opacity: 0
