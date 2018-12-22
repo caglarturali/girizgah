@@ -1,7 +1,7 @@
 /* eslint { no-redeclare: 0 } */
 import * as Settings from '../Logic/Settings';
 import { setPageZoom } from '../Utils/Utils';
-import DarkGlass from '../Themes/DarkGlass';
+import Default from '../Themes/Default';
 
 import { defineMessages } from 'react-intl';
 
@@ -48,8 +48,8 @@ export function addAdditionalSettings(state, language = 'tr') {
     date_format: dateFormatString,
     time_format: '%H:%M',
 
-    // Default to dark glass
-    ...DarkGlass
+    // Set default theme
+    ...Default
   };
 
   let settings = {};
