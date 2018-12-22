@@ -719,13 +719,6 @@ body
     padding-top: 15px
 
   .bottom .left, .bottom .right, .bottom .center
-    float: left
-
-    font-size: 0.75em
-    font-weight: bold
-    letter-spacing: 1px
-
-  .bottom .left, .bottom .center
     color: rgba(255, 255, 255, 0.65)
 
     overflow: hidden
@@ -734,29 +727,50 @@ body
     text-transform: uppercase
     white-space: nowrap
 
-    width: 70%
+    font-size: 0.75em
+    font-weight: bold
+    letter-spacing: 1px
 
     @extend .noselect
+
+  .bottom .left
+    float: left
+    width: 20%
+
+    position: relative
+    bottom: 8px
+    left: 4px
 
   .bottom .right
+    float: right
     text-align: right
 
-    opacity: 0
-
-    width: 30%
+    width: 80%
 
     transition: opacity 1s
-
-    @extend .noselect
 
   .bottom .center
     text-align: center
     width: 100%
 
-  .bottom .clock.loaded
+  .bottom .right.loaded
     opacity: 1
 
+.settings-toggler
+  fill: #fff
+  user-select: none
 
+  opacity: 0.5
+  transition: opacity 300ms ease
+
+  &:hover
+    cursor: pointer
+
+    opacity: 1
+
+.settings-toggler > svg
+  width: 24px
+  height: 24px
 /*****************************************************************
   -- #0.4a Settings
   ===============================================================
@@ -974,33 +988,6 @@ body
     color: #145a07
     background: #84ff93
 
-
-.settings-toggler
-  color: #222
-  background: #fff
-  opacity: 0
-
-  font-weight: bold
-  font-size: 4em
-  text-align: center
-
-  position: fixed
-  top: 25px
-  left: 25px
-
-  padding-top: 8px
-
-  height: 85px
-  width: 85px
-
-  border-radius: 100px
-  user-select: none
-  transition: opacity 300ms ease
-
-  &:hover
-    cursor: pointer
-
-    opacity: 1
 
 
 /*****************************************************************

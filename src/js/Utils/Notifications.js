@@ -9,10 +9,6 @@ const messages = defineMessages({
   switchWallpapers: {
     id: 'Tip.SwitchWallpapers',
     defaultMessage: 'TIP: Click the logo to switch wallpapers.'
-  },
-  accessSettings: {
-    id: 'Tip.AccessSettings',
-    defaultMessage: 'TIP: Access settings by hovering over the top left of your screen!'
   }
 });
 
@@ -30,10 +26,6 @@ export default class Notifications {
       setTimeout(() => {
         this.generate(window.formatMessage(messages.switchWallpapers));
       }, 2000);
-
-      setTimeout(() => {
-        this.generate(window.formatMessage(messages.accessSettings));
-      }, 5 * 1000);
     }
   }
 

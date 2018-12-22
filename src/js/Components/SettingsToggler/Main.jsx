@@ -3,9 +3,11 @@
 // Handles Settings toggling. Straightforward stuff.
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 import { connect } from 'react-redux';
+
+const settingsSVG = require('img/settings-24px.svg');
 
 const toggleSettings = props => {
   props.dispatch({
@@ -14,13 +16,14 @@ const toggleSettings = props => {
 };
 
 export const SettingsToggler = props => {
-  let classes = ['settings-toggler'];
+  let classes = ['settings-toggler', 'left'];
 
-  return ReactDOM.createPortal(
-    <div className={classes.join(' ')} onClick={toggleSettings.bind(this, props)}>
-      &#x2261;
-    </div>,
-    document.getElementById('settings-toggler-mount')
+  return (
+    <div
+      className={classes.join(' ')}
+      onClick={toggleSettings.bind(this, props)}
+      dangerouslySetInnerHTML={{ __html: settingsSVG }}
+    />
   );
 };
 

@@ -13,7 +13,6 @@ import UserPicker from './UserPicker';
 import Settings from 'Components/Settings';
 import Clock from 'Components/DateTimeDisplay/Clock';
 import DateTimeDisplay from 'Components/DateTimeDisplay';
-import SettingsToggler from 'Components/SettingsToggler';
 
 class LoginWindow extends React.Component {
   constructor(props) {
@@ -46,7 +45,6 @@ class LoginWindow extends React.Component {
       <Clock key="time-display" />,
       <DateTimeDisplay key="date-display" language={this.props.language} />,
       <Settings key="settings-window" />,
-      <SettingsToggler key="settings-button" />
     ];
   }
 }

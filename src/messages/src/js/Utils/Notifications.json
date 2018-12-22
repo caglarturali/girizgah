@@ -6,9 +6,5 @@
   {
     "id": "Tip.SwitchWallpapers",
     "defaultMessage": "TIP: Click the logo to switch wallpapers."
-  },
-  {
-    "id": "Tip.AccessSettings",
-    "defaultMessage": "TIP: Access settings by hovering over the top left of your screen!"
   }
 ]

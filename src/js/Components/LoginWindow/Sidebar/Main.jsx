@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import * as SystemOperations from 'Logic/SystemOperations';
 import WallpaperSwitcher from './WallpaperSwitcher';
 import List from './List';
+import SettingsToggler from 'Components/SettingsToggler';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -34,22 +35,22 @@ class Sidebar extends React.Component {
   getEnabledCommands() {
     let commands = {
       Shutdown: {
-        command: "Shutdown",
+        command: 'Shutdown',
         isActive: window.lightdm.can_shutdown && this.props.settings.command_shutdown_enabled,
         content: <FormattedMessage key="Power.Shutdown" id="Power.Shutdown" defaultMessage="Shutdown" />
       },
       Reboot: {
-        command: "Reboot",
+        command: 'Reboot',
         isActive: window.lightdm.can_restart && this.props.settings.command_reboot_enabled,
         content: <FormattedMessage key="Power.Reboot" id="Power.Reboot" defaultMessage="Reboot" />
       },
       Hibernate: {
-        command: "Hibernate",
+        command: 'Hibernate',
         isActive: window.lightdm.can_hibernate && this.props.settings.command_hibernate_enabled,
         content: <FormattedMessage key="Power.Hibernate" id="Power.Hibernate" defaultMessage="Hibernate" />
       },
       Sleep: {
-        command: "Sleep",
+        command: 'Sleep',
         isActive: window.lightdm.can_suspend && this.props.settings.command_sleep_enabled,
         content: <FormattedMessage key="Power.Sleep" id="Power.Sleep" defaultMessage="Sleep" />
       }
@@ -73,7 +74,7 @@ class Sidebar extends React.Component {
     let settings = this.props.settings;
 
     let hostname = window.lightdm.hostname;
-    let hostnameClasses = ['center', 'hostname'];
+    let hostnameClasses = ['right', 'hostname'];
     let hostNameDisabled = settings.hostname_enabled === false;
 
     let commands = this.getEnabledCommands();
@@ -92,6 +93,7 @@ class Sidebar extends React.Component {
         <List enabledCommands={commands} handleCommand={this.handleCommand.bind(this)} />
         <div className="bottom">
           <div className={hostnameClasses.join(' ')}>{hostname}</div>
+          <SettingsToggler key="settings-button" />
         </div>
       </div>
     );
