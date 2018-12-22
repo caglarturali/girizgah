@@ -55,7 +55,25 @@ export const StyleSection = props => {
             name={'Staggered Animations'}
             value={settings.staggered_animations_enabled}
             boundFunction={props.settingsToggleBinary.bind(this, 'staggered_animations_enabled')}
-            localeContent={<FormattedMessage id="Settings.Style.StaggeredAnimations" defaultMessage="Staggered Animations" />}
+            localeContent={
+              <FormattedMessage id="Settings.Style.StaggeredAnimations" defaultMessage="Staggered Animations" />
+            }
+          />
+
+          <Checkbox
+            name={'Background Blur'}
+            value={settings.background_blur_enabled}
+            boundFunction={props.settingsToggleBinary.bind(this, 'background_blur_enabled')}
+            localeContent={<FormattedMessage id="Settings.Style.BackgroundBlur" defaultMessage="Background Blur" />}
+          />
+
+          <TextField
+            name={'Background Blur Radius'}
+            value={settings.background_blur_radius}
+            boundFunction={props.settingsSetValue.bind(this, 'background_blur_radius')}
+            localeContent={
+              <FormattedMessage id="Settings.Style.BackgroundBlurRadius" defaultMessage="Background Blur Radius" />
+            }
           />
         </ul>
       </div>

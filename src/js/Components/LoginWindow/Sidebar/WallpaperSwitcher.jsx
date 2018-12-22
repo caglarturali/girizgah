@@ -175,6 +175,22 @@ class WallpaperSwitcher extends React.Component {
     }, FADEOUT_TIME);
   }
 
+  setBackgroundBlur(cyclerForeground, cyclerBackground) {
+    cyclerForeground.style.transition = 'filter 500ms ease';
+    cyclerBackground.style.transition = 'filter 500ms ease';
+
+    let blurRadius = !this.props.blurRadius.toLowerCase().includes('px')
+      ? `${this.props.blurRadius}px`
+      : this.props.blurRadius;
+
+    let blurStr = this.props.blurEnabled ? `blur(${blurRadius})` : '';
+    
+    cyclerForeground.style.filter = blurStr;
+    cyclerForeground.style.webkitFilter = blurStr;
+    cyclerBackground.style.filter = blurStr;
+    cyclerBackground.style.webkitFilter = blurStr;
+  }
+
   generateOptions() {
     let classes = ['options'];
 
@@ -197,6 +213,8 @@ class WallpaperSwitcher extends React.Component {
   }
 
   render() {
+    this.setBackgroundBlur(this.cyclerBackground, this.cyclerForeground);
+
     let options = this.generateOptions();
 
     let style = cxs({
@@ -213,13 +231,17 @@ class WallpaperSwitcher extends React.Component {
 }
 
 WallpaperSwitcher.propTypes = {
-  distroImage: PropTypes.string
+  distroImage: PropTypes.string,
+  blurEnabled: PropTypes.bool.isRequired,
+  blurRadius: PropTypes.string.isRequired
 };
 
 export default connect(
   state => {
     return {
-      distroImage: state.settings.distro
+      distroImage: state.settings.distro,
+      blurEnabled: state.settings.background_blur_enabled,
+      blurRadius: state.settings.background_blur_radius
     };
   },
   null

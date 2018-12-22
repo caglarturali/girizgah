@@ -47,6 +47,8 @@ export function addAdditionalSettings(state, language = 'tr') {
     user_switcher_enabled: true,
     date_format: dateFormatString,
     time_format: '%H:%M',
+    background_blur_enabled: false,
+    background_blur_radius: '8px',
 
     // Set default theme
     ...Default

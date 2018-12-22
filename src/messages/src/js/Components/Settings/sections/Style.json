@@ -28,6 +28,14 @@
     "defaultMessage": "Staggered Animations"
   },
   {
+    "id": "Settings.Style.BackgroundBlur",
+    "defaultMessage": "Background Blur"
+  },
+  {
+    "id": "Settings.Style.BackgroundBlurRadius",
+    "defaultMessage": "Background Blur Radius"
+  },
+  {
     "id": "Settings.Style.CommandPanel",
     "defaultMessage": "Command Panel"
   },
