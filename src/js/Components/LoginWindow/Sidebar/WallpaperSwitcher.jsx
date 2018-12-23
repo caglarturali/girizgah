@@ -187,8 +187,10 @@ class WallpaperSwitcher extends React.Component {
 
     this.cyclerForeground.style.filter = blurStr;
     this.cyclerForeground.style.webkitFilter = blurStr;
+    this.cyclerForeground.style.mozFilter = blurStr;
     this.cyclerBackground.style.filter = blurStr;
     this.cyclerBackground.style.webkitFilter = blurStr;
+    this.cyclerBackground.style.mozFilter = blurStr;
   }
 
   generateOptions() {
