@@ -29,8 +29,12 @@ class Clock extends React.Component {
   }
 
   updateClock() {
+    let timeFormatString = this.props.settings.time_format;
+    if (this.props.isSecondsEnabled) {
+      timeFormatString += '<span class="seconds">%S</span>';
+    }
     this.setState({
-      formattedTime: Strftime(this.props.settings.time_format)
+      formattedTime: Strftime(timeFormatString)
     });
 
     setTimeout(() => {
@@ -56,13 +60,15 @@ class Clock extends React.Component {
 }
 
 Clock.propTypes = {
-  settings: PropTypes.object.isRequired
+  settings: PropTypes.object.isRequired,
+  isSecondsEnabled: PropTypes.bool.isRequired
 };
 
 export default connect(
   state => {
     return {
-      settings: state.settings
+      settings: state.settings,
+      isSecondsEnabled: state.settings.time_seconds_enabled
     };
   },
   null

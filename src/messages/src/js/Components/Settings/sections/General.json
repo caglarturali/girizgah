@@ -24,6 +24,10 @@
     "defaultMessage": "Time Enabled"
   },
   {
+    "id": "Settings.General.TimeSecondsEnabled",
+    "defaultMessage": "Seconds Counter Enabled"
+  },
+  {
     "id": "Settings.General.TimeFormat",
     "defaultMessage": "Time Format"
   },

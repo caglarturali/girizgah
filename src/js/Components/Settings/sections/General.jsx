@@ -69,7 +69,9 @@ export const GeneralSection = props => {
             name={'Show User Switcher'}
             value={settings.user_switcher_enabled}
             boundFunction={props.settingsToggleBinary.bind(this, 'user_switcher_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.ShowUserSwitcher" defaultMessage="Show User Switcher" />}
+            localeContent={
+              <FormattedMessage id="Settings.General.ShowUserSwitcher" defaultMessage="Show User Switcher" />
+            }
           />
 
           <h4>
@@ -93,6 +95,14 @@ export const GeneralSection = props => {
             value={settings.time_enabled}
             boundFunction={props.settingsToggleBinary.bind(this, 'time_enabled')}
             localeContent={<FormattedMessage id="Settings.General.TimeEnabled" defaultMessage="Time Enabled" />}
+          />
+          <Checkbox
+            name={'Seconds Counter Enabled'}
+            value={settings.time_seconds_enabled}
+            boundFunction={props.settingsToggleBinary.bind(this, 'time_seconds_enabled')}
+            localeContent={
+              <FormattedMessage id="Settings.General.TimeSecondsEnabled" defaultMessage="Seconds Counter Enabled" />
+            }
           />
           <TextField
             name={'Time Format'}
@@ -121,7 +131,9 @@ export const GeneralSection = props => {
             name={'Hibernate Enabled'}
             value={settings.command_hibernate_enabled}
             boundFunction={props.settingsToggleBinary.bind(this, 'command_hibernate_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.HibernateEnabled" defaultMessage="Hibernate Enabled" />}
+            localeContent={
+              <FormattedMessage id="Settings.General.HibernateEnabled" defaultMessage="Hibernate Enabled" />
+            }
           />
           <Checkbox
             name={'Sleep Enabled'}
@@ -145,7 +157,9 @@ export const GeneralSection = props => {
             name={'Background Enabled'}
             value={settings.avatar_background_enabled}
             boundFunction={props.settingsToggleBinary.bind(this, 'avatar_background_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.BackgroundEnabled" defaultMessage="Background Enabled" />}
+            localeContent={
+              <FormattedMessage id="Settings.General.BackgroundEnabled" defaultMessage="Background Enabled" />
+            }
           />
 
           <h4>

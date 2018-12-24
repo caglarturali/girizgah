@@ -23,6 +23,7 @@
   "Settings.General.DateEnabled": "Tarih Etkin",
   "Settings.General.DateFormat": "Tarih Formatı",
   "Settings.General.TimeEnabled": "Saat Etkin",
+  "Settings.General.TimeSecondsEnabled": "Saniye Etkin",
   "Settings.General.TimeFormat": "Saat Formatı",
   "Settings.General.ShutdownEnabled": "Kapat Etkin",
   "Settings.General.RebootEnabled": "Yeniden Başla Etkin",
