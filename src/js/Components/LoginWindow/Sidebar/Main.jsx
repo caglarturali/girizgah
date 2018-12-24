@@ -93,7 +93,9 @@ class Sidebar extends React.Component {
         <List enabledCommands={commands} handleCommand={this.handleCommand.bind(this)} />
         <div className="bottom">
           <div className={hostnameClasses.join(' ')}>{hostname}</div>
-          <SettingsToggler key="settings-button" />
+          <div className="left">
+            <SettingsToggler key="settings-button" />
+          </div>
         </div>
       </div>
     );

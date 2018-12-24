@@ -16,7 +16,7 @@ const toggleSettings = props => {
 };
 
 export const SettingsToggler = props => {
-  let classes = ['settings-toggler', 'left'];
+  let classes = ['settings-toggler'];
 
   return (
     <div
