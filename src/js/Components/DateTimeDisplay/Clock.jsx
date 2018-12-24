@@ -49,7 +49,7 @@ class Clock extends React.Component {
     }
 
     return ReactDOM.createPortal(
-      <div className={classes.join(' ')}>{currentTime}</div>,
+      <div className={classes.join(' ')} dangerouslySetInnerHTML={{ __html: currentTime }} />,
       document.getElementById('time-display')
     );
   }

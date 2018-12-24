@@ -46,7 +46,7 @@ export function addAdditionalSettings(state, language = 'tr') {
     staggered_animations_enabled: true,
     user_switcher_enabled: true,
     date_format: dateFormatString,
-    time_format: '%H:%M',
+    time_format: '%H:%M<span class="seconds">%S</span>',
     background_blur_enabled: false,
     background_blur_radius: '8px',
 
