@@ -30,3 +30,8 @@ Ekran görüntüsü projenin son halinden farklılık gösterebilir!
 - [ ] Parola değiştirme imkanı
 - [x] Bildirim alanı
 - [x] Tarih, saat ve makine ismi
+
+### Ekstra/Opsiyonel
+
+- [ ] Sanal klavye
+- [ ] Hava durumu göstergesi
