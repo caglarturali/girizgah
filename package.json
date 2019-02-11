@@ -9,9 +9,9 @@
     "build:langs": "npm run package:langs && npm run build && npm run package:langs",
     "package:langs": "NODE_ENV='production' babel-node src/scripts/mergeMessages.js",
     "build:dev": "webpack --progress --colors --env.development",
-    "watch": "webpack --progress --colors --watch --env.development",
-    "watch:dev": "webpack-dev-server --colors --env.development",
-    "serve": "live-server --entry-file=index.html"
+    "watch": "webpack --colors --watch --env.development",
+    "serve": "live-server --entry-file=index.html --watch=dist",
+    "dev": "npm run watch | npm run serve"
   },
   "repository": {
     "type": "git",

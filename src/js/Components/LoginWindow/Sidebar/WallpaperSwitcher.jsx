@@ -51,7 +51,7 @@ class WallpaperSwitcher extends React.Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // Set background wallpaper
     let directory = this.state.directory;
     let image = Settings.requestSetting('wallpaper', 'wallpaper-01.jpg');

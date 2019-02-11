@@ -11,7 +11,7 @@ module.exports = env => {
     entry: './src/js/Main.jsx',
     mode: env.NODE_ENV,
     output: {
-      path: path.resolve('./dist/js'),
+      path: path.join(__dirname, 'dist', 'js'),
       filename: 'Girizgah.js'
     },
     module: {
@@ -19,9 +19,7 @@ module.exports = env => {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: [
-            { loader: 'babel-loader' }, 
-            { loader: 'eslint-loader' }]
+          use: [{ loader: 'babel-loader' }, { loader: 'eslint-loader' }]
         },
         {
           test: /\.(scss|sass)$/,
@@ -68,6 +66,11 @@ module.exports = env => {
       extensions: ['.js', '.min.js', '.jsx'],
       mainFiles: ['index', 'Main'],
       modules: ['./dist/js', './node_modules', './src', './src/js']
+    },
+    devServer: {
+      contentBase: path.join(__dirname, '/'),
+      publicPath: path.join(__dirname, 'dist', 'js'),
+      historyApiFallback: true
     }
   };
 };

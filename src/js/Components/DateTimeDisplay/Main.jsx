@@ -19,7 +19,7 @@ class DateDisplay extends React.Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // Wait two seconds, so that the clock can render first and they fade in sequentially rather than in parallel.
     setTimeout(() => {
       this.setDate();

@@ -59,7 +59,7 @@ class UserPicker extends React.Component {
     this.A_Pressed = false;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // Define functions required in the global scope by LightDM.
     window.show_prompt = (text, type) => {
       if (type === 'text') {
