@@ -4,7 +4,7 @@ This project is a fork of [Aether](https://noisek.github.io/Aether/) and under a
 
 # Girizgah :blush:
 
-###### ( lightdm-webkit-theme-girizgah )
+###### ( Girizgah )
 
 :heavy_check_mark: Pardus için LightDM WebKit teması.
 
