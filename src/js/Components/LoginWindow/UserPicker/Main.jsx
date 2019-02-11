@@ -12,6 +12,8 @@ import UserSwitchButton from './UserSwitcher/UserSwitchButton';
 import UserSwitcher from './UserSwitcher';
 import UserPanelForm from './Form';
 
+import PasswordChangeButton from './UserSwitcher/PasswordChangeButton';
+
 import { defineMessages } from 'react-intl';
 
 const FADE_IN_DURATION = 200;
@@ -269,6 +271,7 @@ class UserPicker extends React.Component {
             <If condition={settings.user_switcher_enabled}>
               <UserSwitchButton handleSwitcherClick={this.handleSwitcherClick.bind(this)} />
             </If>
+            <PasswordChangeButton handlePasswordChangeClick={null} />
           </div>
         </div>
         <UserSwitcher active={this.state.switcherActive} setActiveUser={this.setActiveUser.bind(this)} />

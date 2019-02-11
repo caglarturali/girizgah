@@ -74,6 +74,7 @@
   "Login.Notification.SwitchedToOnlyUser": "Kullanıcı hesabı bu sistemde oturum açabilecek diğer kullanıcıya geçmiştir.",
   "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
   "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı.",
+  "Login.ChangePasswordButton": "PAROLA DEĞİŞTİR",
   "WallpaperSwitcher.Notification.Saved": "Bu duvar kağıdı varsayılan arkaplan olarak kaydedildi.",
   "WallpaperSwitcher.Notification.Reset": "Duvar kağıdı varsayılana ayarlandı, değişiklikler kaydedilmedi."
 }

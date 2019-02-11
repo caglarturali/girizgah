@@ -14,6 +14,7 @@
     "SessionSelect.Back": "Back",
     "UserSwitcher.UserCount": "User {currentUserIndex} of {totalUserCount}",
     "UserSwitcher.BackButton": "BACK",
+    "Login.ChangePasswordButton": "CHANGE PASSWORD",
     "Login.SwitchButton": "SWITCH USER",
     "Settings.Category.General": "General",
     "Settings.Category.Style": "Style",
@@ -24,9 +25,9 @@
     "Settings.General.ShowUserSwitcher": "Show User Switcher",
     "Settings.General.DateTime": "Date & Time",
     "Settings.General.DateEnabled": "Date Enabled",
-    "Settings.General.TimeSecondsEnabled": "Seconds Counter Enabled",
     "Settings.General.DateFormat": "Date Format",
     "Settings.General.TimeEnabled": "Time Enabled",
+    "Settings.General.TimeSecondsEnabled": "Seconds Counter Enabled",
     "Settings.General.TimeFormat": "Time Format",
     "Settings.General.CommandVisibility": "Command Visibility",
     "Settings.General.ShutdownEnabled": "Shutdown Enabled",
@@ -154,6 +155,7 @@
     "Login.Notification.SwitchedToOnlyUser": "Kullanıcı hesabı bu sistemde oturum açabilecek diğer kullanıcıya geçmiştir.",
     "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
     "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı.",
+    "Login.ChangePasswordButton": "PAROLA DEĞİŞTİR",
     "WallpaperSwitcher.Notification.Saved": "Bu duvar kağıdı varsayılan arkaplan olarak kaydedildi.",
     "WallpaperSwitcher.Notification.Reset": "Duvar kağıdı varsayılana ayarlandı, değişiklikler kaydedilmedi."
   }
