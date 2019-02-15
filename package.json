@@ -55,9 +55,9 @@
     "node-sass": "^4.9.0",
     "pixi.js": "^4.7.3",
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": ">=16.0.1",
     "react-color": "^2.14.0",
-    "react-dom": "^16.0.0",
+    "react-dom": ">=16.0.1",
     "react-intl": "^2.7.2",
     "react-redux": "^5.0.7",
     "reactcss": "^1.2.2",
@@ -73,6 +73,6 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "live-server": "^1.2.1",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": ">=3.1.11"
   }
 }
