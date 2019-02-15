@@ -86,8 +86,7 @@
       window.__debug = false;
 
       // Debug mode - fallback values for live preview.
-      if (!window.lightdm) {
-        window.__debug = true;
+      if (window.__debug === true) {
 
         window.lightdm = {
           "authenticate": function(){ return true; },
