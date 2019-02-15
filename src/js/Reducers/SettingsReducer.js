@@ -27,7 +27,7 @@ export function addAdditionalSettings(state, language = 'tr') {
   let distroDefault =
     window.__debug === true
       ? 'src/sample/logos/pardus-01.png'
-      : '/usr/share/lightdm-webkit/themes/Girizgah/src/img/logos/pardus.png';
+      : '/usr/share/lightdm-webkit/themes/girizgah/src/img/logos/pardus.png';
 
   let dateFormatString;
   if (language.toLowerCase() === 'tr' || language.toLowerCase().includes('tr')) {

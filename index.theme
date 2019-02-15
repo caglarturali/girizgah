@@ -1,6 +1,6 @@
 [theme]
-name=Girizgah
+name=girizgah
 description=Girizgah, a LightDM WebKit Theme for Pardus Linux.
-engine=lightdm-webkit-greeter
+engine=lightdm-webkit2-greeter
 url=index.html
 session=xfce
