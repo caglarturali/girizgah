@@ -8,14 +8,13 @@ export function getWallpaperDirectory() {
     return 'src/sample/wallpapers/';
   }
 
-  let wallpapersDirectory = window.config.get_str('branding', 'background_images') || '/usr/share/backgrounds/';
+  let wallpapersDirectory = window.config.get_str('branding', 'background_images');
 
   // Do NOT allow the default wallpaper directory to set, as this will prevent the default provided backgrounds from
   // being used 100% of the time in a stock install.
-  // TODO: Comment out for now.
-  // if (wallpapersDirectory == '/usr/share/backgrounds' || wallpapersDirectory == '/usr/share/backgrounds/') {
-  //   wallpapersDirectory = '/usr/share/lightdm-webkit/themes/girizgah/src/img/wallpapers/';
-  // }
+  if (wallpapersDirectory == '/usr/share/backgrounds' || wallpapersDirectory == '/usr/share/backgrounds/') {
+    wallpapersDirectory = '/usr/share/lightdm-webkit/themes/girizgah/src/img/wallpapers/';
+  }
 
   return wallpapersDirectory;
 }
