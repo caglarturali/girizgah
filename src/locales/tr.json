@@ -75,6 +75,8 @@
   "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
   "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı.",
   "Login.ChangePasswordButton": "PAROLA DEĞİŞTİR",
+  "Login.Notification.LayoutChanged": "Klavye yerleşimi {layoutName} olarak ayarlandı.",
+  "Login.Notification.LayoutChangeFailed": "Klavye yerleşimi değiştirilemedi. {errMsg}",
   "WallpaperSwitcher.Notification.Saved": "Bu duvar kağıdı varsayılan arkaplan olarak kaydedildi.",
   "WallpaperSwitcher.Notification.Reset": "Duvar kağıdı varsayılana ayarlandı, değişiklikler kaydedilmedi."
 }

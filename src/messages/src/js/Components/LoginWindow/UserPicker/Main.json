@@ -18,5 +18,13 @@
   {
     "id": "Login.Notification.AutoLoginExpired",
     "defaultMessage": "Autologin expired."
+  },
+  {
+    "id": "Login.Notification.LayoutChanged",
+    "defaultMessage": "Keyboard layout changed to {layoutName}."
+  },
+  {
+    "id": "Login.Notification.LayoutChangeFailed",
+    "defaultMessage": "Unable to change the keyboard layout. {errMsg}"
   }
 ]

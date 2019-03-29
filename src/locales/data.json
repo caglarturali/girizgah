@@ -11,6 +11,8 @@
     "Login.Notification.SwitchedToOnlyUser": "User has been automatically switched to the only other user on this system.",
     "Login.Notification.IncorrectPassword": "Password incorrect, please try again.",
     "Login.Notification.AutoLoginExpired": "Autologin expired.",
+    "Login.Notification.LayoutChanged": "Keyboard layout changed to {layoutName}.",
+    "Login.Notification.LayoutChangeFailed": "Unable to change the keyboard layout. {errMsg}",
     "SessionSelect.Back": "Back",
     "Login.ChangePasswordButton": "CHANGE PASSWORD",
     "UserSwitcher.UserCount": "User {currentUserIndex} of {totalUserCount}",
@@ -156,6 +158,8 @@
     "Login.Notification.IncorrectPassword": "Parola yanlış, lütfen tekrar deneyin!",
     "Login.Notification.AutoLoginExpired": "Otomatik oturum açma zaman aşımına uğradı.",
     "Login.ChangePasswordButton": "PAROLA DEĞİŞTİR",
+    "Login.Notification.LayoutChanged": "Klavye yerleşimi {layoutName} olarak ayarlandı.",
+    "Login.Notification.LayoutChangeFailed": "Klavye yerleşimi değiştirilemedi. {errMsg}",
     "WallpaperSwitcher.Notification.Saved": "Bu duvar kağıdı varsayılan arkaplan olarak kaydedildi.",
     "WallpaperSwitcher.Notification.Reset": "Duvar kağıdı varsayılana ayarlandı, değişiklikler kaydedilmedi."
   }

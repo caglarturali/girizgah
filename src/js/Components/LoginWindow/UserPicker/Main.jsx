@@ -46,6 +46,14 @@ const messages = defineMessages({
   autoLoginExpired: {
     id: 'Login.Notification.AutoLoginExpired',
     defaultMessage: 'Autologin expired.'
+  },
+  layoutChanged: {
+    id: 'Login.Notification.LayoutChanged',
+    defaultMessage: 'Keyboard layout changed to {layoutName}.'
+  },
+  layoutChangeFailed: {
+    id: 'Login.Notification.LayoutChangeFailed',
+    defaultMessage: 'Unable to change the keyboard layout. {errMsg}'
   }
 });
 
@@ -57,8 +65,7 @@ class UserPicker extends React.Component {
       fadeIn: false,
       password: '',
       passwordFailed: false,
-      switcherActive: false,
-      error: null
+      switcherActive: false
     };
 
     this.CTRL_Pressed = false;
@@ -175,11 +182,21 @@ class UserPicker extends React.Component {
     }
   }
 
-  handleLayoutChange(event) {
+  handleLayoutChange(layout) {
     try {
-      window.lightdm.layout(event.target.value);
+      window.lightdm.layout(layout);
+      window.notifications.generate(
+        window.formatMessage(messages.layoutChanged, {
+          layoutName: layout.description
+        })
+      );
     } catch (e) {
-      this.setState({ error: e.message });
+      window.notifications.generate(
+        window.formatMessage(messages.layoutChangeFailed, {
+          errMsg: e.message
+        }),
+        'error'
+      );
     }
   }
 
