@@ -23,7 +23,7 @@ Ekran görüntüsü projenin son halinden farklılık gösterebilir!
 
 - [x] Parola giriş alanı
 - [x] Güç kontrolleri
-- [ ] Klavye dil değiştirme
+- [x] Klavye dil değiştirme
 - [x] Kullanıcılar arası geçiş
 - [x] Kullanıcı profil avatarı
 - [x] Oturum tipi seçme imkanı

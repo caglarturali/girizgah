@@ -185,10 +185,15 @@ class UserPicker extends React.Component {
   handleLayoutChange(layout) {
     try {
       window.lightdm.layout = layout.name;
+      this.props.dispatch({
+        type: 'AUTH_SET_KEYBOARD_LAYOUT',
+        layout: layout
+      });
       window.notifications.generate(
         window.formatMessage(messages.layoutChanged, {
           layoutName: layout.description
-        })
+        }),
+        'success'
       );
     } catch (e) {
       window.notifications.generate(
@@ -318,6 +323,7 @@ class UserPicker extends React.Component {
               />
             </If>
             <KeyboardLayoutSelector
+              activeLayout={this.props.activeLayout}
               handleLayoutChange={this.handleLayoutChange.bind(this)}
             />
           </div>
@@ -335,7 +341,8 @@ UserPicker.propTypes = {
   dispatch: PropTypes.func.isRequired,
   settings: PropTypes.object.isRequired,
   activeUser: PropTypes.object.isRequired,
-  activeSession: PropTypes.object.isRequired
+  activeSession: PropTypes.object.isRequired,
+  activeLayout: PropTypes.object.isRequired
 };
 
 export default connect(
@@ -343,6 +350,7 @@ export default connect(
     return {
       activeUser: state.user,
       activeSession: state.session,
+      activeLayout: state.layout,
       settings: state.settings
     };
   },

@@ -8,17 +8,10 @@ import PropTypes from 'prop-types';
 export default class KeyboardLayoutSelector extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      layout: { name: window.lightdm.layout }
-    };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
     const selectedLayout = JSON.parse(e.target.value);
-    this.setState({ layout: selectedLayout });
     this.props.handleLayoutChange(selectedLayout);
   }
 
@@ -28,13 +21,13 @@ export default class KeyboardLayoutSelector extends Component {
     return (
       <div className={classes.join(' ')}>
         <div className="keyboard-sel">
-          <select onChange={this.handleChange}>
+          <select onChange={this.handleChange.bind(this)}>
             {window.lightdm.layouts.map(layoutItem => (
               <option
                 key={layoutItem.name}
                 value={JSON.stringify(layoutItem)}
                 selected={
-                  layoutItem.name === this.state.layout.name && 'selected'
+                  layoutItem.name === this.props.activeLayout && 'selected'
                 }
               >
                 {layoutItem.description}
@@ -48,5 +41,6 @@ export default class KeyboardLayoutSelector extends Component {
 }
 
 KeyboardLayoutSelector.propTypes = {
-  handleLayoutChange: PropTypes.func.isRequired
+  handleLayoutChange: PropTypes.func.isRequired,
+  activeLayout: PropTypes.string.isRequired
 };

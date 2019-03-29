@@ -8,7 +8,8 @@ export function getDefaultState() {
       language: window.lightdm.language
     },
     user: SystemOperations.findInitialUser(),
-    session: SystemOperations.findInitialSession()
+    session: SystemOperations.findInitialSession(),
+    layout: window.lightdm.layout
   };
 }
 
@@ -29,6 +30,9 @@ export const PrimaryReducer = (state, action) => {
 
     case 'AUTH_SET_ACTIVE_USER':
       return { ...state, user: action.user };
+
+    case 'AUTH_SET_KEYBOARD_LAYOUT':
+      return { ...state, layout: action.layout.name };
 
     default:
       return state;
