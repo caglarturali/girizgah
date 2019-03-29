@@ -184,7 +184,7 @@ class UserPicker extends React.Component {
 
   handleLayoutChange(layout) {
     try {
-      window.lightdm.layout(layout);
+      window.lightdm.layout = layout.name;
       window.notifications.generate(
         window.formatMessage(messages.layoutChanged, {
           layoutName: layout.description

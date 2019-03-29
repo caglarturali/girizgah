@@ -5,20 +5,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class KeyboardLayoutSelector extends Component {
+export default class KeyboardLayoutSelector extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      layout: window.lightdm.layout
+      layout: { name: window.lightdm.layout }
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    this.setState({ layout: e.target.value.name });
-    this.props.handleLayoutChange(e.target.value);
+    const selectedLayout = JSON.parse(e.target.value);
+    this.setState({ layout: selectedLayout });
+    this.props.handleLayoutChange(selectedLayout);
   }
 
   render() {
@@ -31,8 +32,10 @@ export class KeyboardLayoutSelector extends Component {
             {window.lightdm.layouts.map(layoutItem => (
               <option
                 key={layoutItem.name}
-                value={layoutItem}
-                selected={layoutItem.name === this.state.layout && 'selected'}
+                value={JSON.stringify(layoutItem)}
+                selected={
+                  layoutItem.name === this.state.layout.name && 'selected'
+                }
               >
                 {layoutItem.description}
               </option>
@@ -47,5 +50,3 @@ export class KeyboardLayoutSelector extends Component {
 KeyboardLayoutSelector.propTypes = {
   handleLayoutChange: PropTypes.func.isRequired
 };
-
-export default KeyboardLayoutSelector;
