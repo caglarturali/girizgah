@@ -12,7 +12,7 @@ import UserSwitchButton from './UserSwitcher/UserSwitchButton';
 import UserSwitcher from './UserSwitcher';
 import UserPanelForm from './Form';
 
-import PasswordChangeButton from './UserSwitcher/PasswordChangeButton';
+import KeyboardLayoutSelector from './UserSwitcher/KeyboardLayoutSelector';
 
 import { defineMessages } from 'react-intl';
 
@@ -26,15 +26,18 @@ const A_KEYCODE = 65;
 const messages = defineMessages({
   loggedInAs: {
     id: 'Login.Notification.LoggedInAs',
-    defaultMessage: 'You are now logged in as {activeUserDisplayName} to {activeSessionName}.'
+    defaultMessage:
+      'You are now logged in as {activeUserDisplayName} to {activeSessionName}.'
   },
   onlyUser: {
     id: 'Login.Notification.OnlyUser',
-    defaultMessage: 'You are the only user that is able to log in on this system.'
+    defaultMessage:
+      'You are the only user that is able to log in on this system.'
   },
   switchedToOnlyUser: {
     id: 'Login.Notification.SwitchedToOnlyUser',
-    defaultMessage: 'User has been automatically switched to the only other user on this system.'
+    defaultMessage:
+      'User has been automatically switched to the only other user on this system.'
   },
   incorrectPassword: {
     id: 'Login.Notification.IncorrectPassword',
@@ -84,7 +87,9 @@ class UserPicker extends React.Component {
     };
 
     window.autologin_timer_expired = () => {
-      window.notifications.generate(window.formatMessage(messages.autoLoginExpired));
+      window.notifications.generate(
+        window.formatMessage(messages.autoLoginExpired)
+      );
     };
 
     // Add a handler for Ctrl+A to prevent selection issues.
@@ -139,13 +144,18 @@ class UserPicker extends React.Component {
         });
       }
     } else {
-      window.lightdm.authenticate(this.props.activeUser.username || this.props.activeUser.name);
+      window.lightdm.authenticate(
+        this.props.activeUser.username || this.props.activeUser.name
+      );
     }
   }
 
   handleSwitcherClick(event) {
     if (window.lightdm.users.length < 2) {
-      window.notifications.generate(window.formatMessage(messages.onlyUser), 'error');
+      window.notifications.generate(
+        window.formatMessage(messages.onlyUser),
+        'error'
+      );
       return false;
     } else if (window.lightdm.users.length === 2) {
       // No point in showing them the switcher if there is only one other user. Switch immediately.
@@ -154,12 +164,18 @@ class UserPicker extends React.Component {
       })[0];
 
       this.setActiveUser(otherUser, true);
-      window.notifications.generate(window.formatMessage(messages.switchedToOnlyUser));
+      window.notifications.generate(
+        window.formatMessage(messages.switchedToOnlyUser)
+      );
     } else {
       this.setState({
         switcherActive: true
       });
     }
+  }
+
+  handleLayoutChange(event) {
+    // console.log(event.target.value);
   }
 
   handlePasswordInput(event) {
@@ -201,7 +217,10 @@ class UserPicker extends React.Component {
   }
 
   rejectPassword() {
-    window.notifications.generate(window.formatMessage(messages.incorrectPassword), 'error');
+    window.notifications.generate(
+      window.formatMessage(messages.incorrectPassword),
+      'error'
+    );
 
     this.setState({
       password: '',
@@ -238,9 +257,9 @@ class UserPicker extends React.Component {
     }
 
     let _styles = {
-      background: `linear-gradient(to bottom, ${settings.style_login_gradient_top_color} 0%, ${
-        settings.style_login_gradient_bottom_color
-      } 100%)`,
+      background: `linear-gradient(to bottom, ${
+        settings.style_login_gradient_top_color
+      } 0%, ${settings.style_login_gradient_bottom_color} 100%)`,
       'border-color': settings.style_login_border_color
     };
 
@@ -256,7 +275,10 @@ class UserPicker extends React.Component {
           <div className={avatarClasses.join(' ')}>
             <div className={avatarBackgroundClasses.join(' ')}>
               <div className="avatar-mask">
-                <img className="user-avatar" src={this.props.activeUser.image} />
+                <img
+                  className="user-avatar"
+                  src={this.props.activeUser.image}
+                />
               </div>
             </div>
           </div>
@@ -269,12 +291,20 @@ class UserPicker extends React.Component {
           />
           <div className="bottom">
             <If condition={settings.user_switcher_enabled}>
-              <UserSwitchButton handleSwitcherClick={this.handleSwitcherClick.bind(this)} />
+              <UserSwitchButton
+                handleSwitcherClick={this.handleSwitcherClick.bind(this)}
+              />
             </If>
-            <PasswordChangeButton handlePasswordChangeClick={null} />
+            <KeyboardLayoutSelector
+              activeUser={this.props.activeUser}
+              handleLayoutChange={this.handleLayoutChange.bind(this)}
+            />
           </div>
         </div>
-        <UserSwitcher active={this.state.switcherActive} setActiveUser={this.setActiveUser.bind(this)} />
+        <UserSwitcher
+          active={this.state.switcherActive}
+          setActiveUser={this.setActiveUser.bind(this)}
+        />
       </div>
     );
   }

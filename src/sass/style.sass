@@ -582,8 +582,11 @@ body
         font-weight: bold
 
   .login-panel-main .bottom, .login-panel-switcher .bottom
-    padding-top: 15px
     height: 5%
+
+    .left
+      padding-top: 15px
+      width: 30%
 
     .left, .right
       color: #fff
@@ -591,7 +594,6 @@ body
       font-size: 0.75em
       font-weight: bold
       letter-spacing: 1px
-      width: 30%
 
       @extend .noselect
 
@@ -599,8 +601,47 @@ body
         cursor: pointer
 
     .right
+      padding-top: 5px
       float: right;
 
+      .keyboard-sel
+        border: none;
+        border-radius: 3px;
+        overflow: hidden;
+        background: rgba(255,255,255, .25)
+
+        select
+          color: #fff
+          font-size: 0.85em
+
+          font-family: "Open Sans"
+          font-weight: bold
+          font-style: italic
+          line-height: 1.2em
+          vertical-align: middle
+
+          text-overflow: ellipsis
+          overflow: hidden
+          white-space: nowrap
+
+          padding-left: 10px
+          padding-right: 30px
+
+          border-radius: 2px
+
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05)
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12)
+          padding: 5px 8px;
+          border: none;
+          box-shadow: none;
+          background: transparent;
+          background-image: none;
+          -webkit-appearance: none;
+
+        select:focus
+          outline: none;
+
+        
 /*****************************************************************
   -- #0.3b Command Panel
   ===============================================================
