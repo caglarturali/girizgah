@@ -11,8 +11,12 @@ export default class KeyboardLayoutSelector extends Component {
   }
 
   handleChange(e) {
-    const selectedLayout = JSON.parse(e.target.value);
-    this.props.handleLayoutChange(selectedLayout);
+    const selectedLayoutName = e.target.value;
+    // Find corresponding Layout object and pass it to the parent.
+    const selectedLayoutObj = window.lightdm.layouts.filter(
+      item => item.name === selectedLayoutName
+    )[0];
+    this.props.handleLayoutChange(selectedLayoutObj);
   }
 
   render() {
@@ -21,15 +25,12 @@ export default class KeyboardLayoutSelector extends Component {
     return (
       <div className={classes.join(' ')}>
         <div className="keyboard-sel">
-          <select onChange={this.handleChange.bind(this)}>
+          <select
+            onChange={this.handleChange.bind(this)}
+            value={this.props.activeLayout}
+          >
             {window.lightdm.layouts.map(layoutItem => (
-              <option
-                key={layoutItem.name}
-                value={JSON.stringify(layoutItem)}
-                selected={
-                  layoutItem.name === this.props.activeLayout && 'selected'
-                }
-              >
+              <option key={layoutItem.name} value={layoutItem.name}>
                 {layoutItem.description}
               </option>
             ))}

@@ -72,7 +72,7 @@ class UserPicker extends React.Component {
     this.A_Pressed = false;
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     // Define functions required in the global scope by LightDM.
     window.show_prompt = (text, type) => {
       if (type === 'text') {
@@ -342,7 +342,7 @@ UserPicker.propTypes = {
   settings: PropTypes.object.isRequired,
   activeUser: PropTypes.object.isRequired,
   activeSession: PropTypes.object.isRequired,
-  activeLayout: PropTypes.object.isRequired
+  activeLayout: PropTypes.string.isRequired
 };
 
 export default connect(

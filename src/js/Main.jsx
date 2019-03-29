@@ -14,7 +14,7 @@ import { addAdditionalSettings } from './Reducers/SettingsReducer';
 
 import { IntlProvider } from 'react-intl';
 import IntlGlobalProvider from '../modules/IntlGlobalProvider';
-import { language, messages } from './Locales';
+import { language, messages } from './Locales/Main';
 
 export default function Main() {
   let initialState = getDefaultState();
@@ -26,7 +26,8 @@ export default function Main() {
     store = createStore(
       PrimaryReducer,
       initialState,
-      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__()
     );
   } else {
     store = createStore(PrimaryReducer, initialState);

@@ -19,7 +19,7 @@ class DateDisplay extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     // Wait two seconds, so that the clock can render first and they fade in sequentially rather than in parallel.
     setTimeout(() => {
       this.setDate();
@@ -51,14 +51,20 @@ class DateDisplay extends React.Component {
     let dateClasses = ['date'];
     let dateString = this.state.formattedDate;
 
-    if (this.state.initialized === true && this.props.settings.date_enabled === true) {
+    if (
+      this.state.initialized === true &&
+      this.props.settings.date_enabled === true
+    ) {
       dateClasses.push('loaded');
     } else if (this.state.date_enabled === false) {
       dateClasses.push('invisible');
     }
 
     return ReactDOM.createPortal(
-      <div className={dateClasses.join(' ')} dangerouslySetInnerHTML={{ __html: dateString }} />,
+      <div
+        className={dateClasses.join(' ')}
+        dangerouslySetInnerHTML={{ __html: dateString }}
+      />,
       document.getElementById('date-display')
     );
   }

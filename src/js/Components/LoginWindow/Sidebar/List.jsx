@@ -16,7 +16,7 @@ export const List = ({ enabledCommands, handleCommand }) => {
 };
 
 List.propTypes = {
-  enabledCommands: PropTypes.arrayOf(PropTypes.string).isRequired,
+  enabledCommands: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleCommand: PropTypes.func.isRequired
 };
 

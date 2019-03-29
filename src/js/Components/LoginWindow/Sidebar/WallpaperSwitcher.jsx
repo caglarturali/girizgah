@@ -51,17 +51,23 @@ class WallpaperSwitcher extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     // Set background wallpaper
     let directory = this.state.directory;
     let image = Settings.requestSetting('wallpaper', 'wallpaper-01.jpg');
-    this.cyclerBackground = document.querySelectorAll('.wallpaper-background')[0];
-    this.cyclerForeground = document.querySelectorAll('.wallpaper-foreground')[0];
+    this.cyclerBackground = document.querySelectorAll(
+      '.wallpaper-background'
+    )[0];
+    this.cyclerForeground = document.querySelectorAll(
+      '.wallpaper-foreground'
+    )[0];
     this.cyclerPreloader = document.querySelectorAll('.wallpaper-preload')[0];
 
     this.cyclerForeground.style.background = `url('${directory}${image}')`;
+    this.cyclerForeground.style.backgroundPosition = 'center';
     this.cyclerForeground.style.backgroundSize = 'cover';
     document.body.style.background = `url('${directory}${image}')`;
+    document.body.style.backgroundPosition = 'center';
     document.body.style.backgroundSize = 'cover';
 
     this.setState({
@@ -75,7 +81,10 @@ class WallpaperSwitcher extends React.Component {
 
     // Due diligence.
     Settings.saveSetting('wallpaper', selectedWallpaper);
-    window.notifications.generate(window.formatMessage(messages.saved), 'success');
+    window.notifications.generate(
+      window.formatMessage(messages.saved),
+      'success'
+    );
 
     // Reset switcher state
     switcher.active = false;
@@ -97,7 +106,8 @@ class WallpaperSwitcher extends React.Component {
     let wallpapers = this.state.wallpapers;
     let switcher = this.state.switcher;
 
-    const nextIndex = index => (index + wallpapers.length + 1) % wallpapers.length;
+    const nextIndex = index =>
+      (index + wallpapers.length + 1) % wallpapers.length;
 
     let newIndex = nextIndex(switcher.index);
     let newWallpaper = wallpapers[newIndex];
@@ -115,13 +125,17 @@ class WallpaperSwitcher extends React.Component {
   }
 
   handleSwitcherActivation() {
-    let switcher = this.state.switcher;
-    switcher.active = true;
-    this.cycleWallpaper();
+    if (this.state.switcher.active === false) {
+      setTimeout(() => {
+        let switcher = this.state.switcher;
+        switcher.active = true;
+        this.cycleWallpaper();
 
-    this.setState({
-      switcher: switcher
-    });
+        this.setState({
+          switcher: switcher
+        });
+      }, 100);
+    }
   }
 
   rejectWallpaper() {
@@ -161,7 +175,10 @@ class WallpaperSwitcher extends React.Component {
       // Cycle new wallpaper back to the front, make it visible again.
       this.cyclerForeground.style.background = `url('${directory}${newWallpaper}')`;
       this.cyclerForeground.style.backgroundSize = 'cover';
-      this.cyclerForeground.className = this.cyclerForeground.className.replace(' fadeout', '');
+      this.cyclerForeground.className = this.cyclerForeground.className.replace(
+        ' fadeout',
+        ''
+      );
       document.body.style.background = `url('${directory}${newWallpaper}')`;
       document.body.style.backgroundSize = 'cover';
 
@@ -176,6 +193,13 @@ class WallpaperSwitcher extends React.Component {
   }
 
   setBackgroundBlur() {
+    if (
+      this.cyclerForeground === undefined ||
+      this.cyclerBackground === undefined
+    ) {
+      return;
+    }
+
     this.cyclerForeground.style.transition = 'filter 500ms ease';
     this.cyclerBackground.style.transition = 'filter 500ms ease';
 
@@ -203,10 +227,16 @@ class WallpaperSwitcher extends React.Component {
     return (
       <div className="options-wrapper">
         <div className={classes.join(' ')}>
-          <div className="button-reject" onClick={this.rejectWallpaper.bind(this)}>
+          <div
+            className="button-reject"
+            onClick={this.rejectWallpaper.bind(this)}
+          >
             ✕
           </div>
-          <div className="button-accept" onClick={this.acceptWallpaper.bind(this)}>
+          <div
+            className="button-accept"
+            onClick={this.acceptWallpaper.bind(this)}
+          >
             ✓
           </div>
         </div>
@@ -225,7 +255,10 @@ class WallpaperSwitcher extends React.Component {
 
     return (
       <div className="distro-wrapper">
-        <div className={`distro-logo ${style}`} onClick={this.handleSwitcherActivation.bind(this)} />
+        <div
+          className={`distro-logo ${style}`}
+          onClick={this.handleSwitcherActivation.bind(this)}
+        />
         {options}
       </div>
     );
