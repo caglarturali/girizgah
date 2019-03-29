@@ -57,7 +57,8 @@ class UserPicker extends React.Component {
       fadeIn: false,
       password: '',
       passwordFailed: false,
-      switcherActive: false
+      switcherActive: false,
+      error: null
     };
 
     this.CTRL_Pressed = false;
@@ -175,7 +176,11 @@ class UserPicker extends React.Component {
   }
 
   handleLayoutChange(event) {
-    // console.log(event.target.value);
+    try {
+      window.lightdm.layout(event.target.value);
+    } catch (e) {
+      this.setState({ error: e.message });
+    }
   }
 
   handlePasswordInput(event) {
@@ -296,7 +301,6 @@ class UserPicker extends React.Component {
               />
             </If>
             <KeyboardLayoutSelector
-              activeUser={this.props.activeUser}
               handleLayoutChange={this.handleLayoutChange.bind(this)}
             />
           </div>
