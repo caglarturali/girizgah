@@ -11,7 +11,8 @@
     "build:dev": "webpack --progress --colors --env.development",
     "watch": "webpack --colors --watch --env.development",
     "serve": "live-server --entry-file=index.html --watch=dist",
-    "dev": "npm run watch | npm run serve"
+    "dev": "npm run watch | npm run serve",
+    "deploy": "npm run build && ./deploy.sh"
   },
   "repository": {
     "type": "git",
