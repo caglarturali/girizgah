@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 
 import * as FileOperations from 'Logic/FileOperations';
 import TextField from '../inputs/TextField';
+import Dropdown from '../inputs/Dropdown';
 import Checkbox from '../inputs/Checkbox';
 
 import { FormattedMessage } from 'react-intl';
@@ -55,6 +56,7 @@ LogoChooser.propTypes = {
 
 export const GeneralSection = props => {
   const settings = props.settings;
+  const users = window.lightdm.users.map(e => e.name);
 
   return (
     <div className="settings-general">
@@ -62,115 +64,232 @@ export const GeneralSection = props => {
       <div className="right">
         <ul>
           <h4>
-            <FormattedMessage id="Settings.General.UserFunctionality" defaultMessage="User Functionality" />
+            <FormattedMessage
+              id="Settings.General.UserFunctionality"
+              defaultMessage="User Functionality"
+            />
           </h4>
           <hr />
+          <Dropdown
+            name={'Default User'}
+            value={settings.default_user}
+            options={['', ...users]}
+            boundFunction={props.settingsSetValue.bind(this, 'default_user')}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.DefaultUser"
+                defaultMessage="Default User"
+              />
+            }
+          />
           <Checkbox
             name={'Show User Switcher'}
             value={settings.user_switcher_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'user_switcher_enabled')}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'user_switcher_enabled'
+            )}
             localeContent={
-              <FormattedMessage id="Settings.General.ShowUserSwitcher" defaultMessage="Show User Switcher" />
+              <FormattedMessage
+                id="Settings.General.ShowUserSwitcher"
+                defaultMessage="Show User Switcher"
+              />
             }
           />
 
           <h4>
-            <FormattedMessage id="Settings.General.DateTime" defaultMessage="Date & Time" />
+            <FormattedMessage
+              id="Settings.General.DateTime"
+              defaultMessage="Date & Time"
+            />
           </h4>
           <hr />
           <Checkbox
             name={'Date Enabled'}
             value={settings.date_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'date_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.DateEnabled" defaultMessage="Date Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'date_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.DateEnabled"
+                defaultMessage="Date Enabled"
+              />
+            }
           />
           <TextField
             name={'Date Format'}
             value={settings.date_format}
             boundFunction={props.settingsSetValue.bind(this, 'date_format')}
-            localeContent={<FormattedMessage id="Settings.General.DateFormat" defaultMessage="Date Format" />}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.DateFormat"
+                defaultMessage="Date Format"
+              />
+            }
           />
           <Checkbox
             name={'Time Enabled'}
             value={settings.time_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'time_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.TimeEnabled" defaultMessage="Time Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'time_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.TimeEnabled"
+                defaultMessage="Time Enabled"
+              />
+            }
           />
           <Checkbox
             name={'Seconds Counter Enabled'}
             value={settings.time_seconds_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'time_seconds_enabled')}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'time_seconds_enabled'
+            )}
             localeContent={
-              <FormattedMessage id="Settings.General.TimeSecondsEnabled" defaultMessage="Seconds Counter Enabled" />
+              <FormattedMessage
+                id="Settings.General.TimeSecondsEnabled"
+                defaultMessage="Seconds Counter Enabled"
+              />
             }
           />
           <TextField
             name={'Time Format'}
             value={settings.time_format}
             boundFunction={props.settingsSetValue.bind(this, 'time_format')}
-            localeContent={<FormattedMessage id="Settings.General.TimeFormat" defaultMessage="Time Format" />}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.TimeFormat"
+                defaultMessage="Time Format"
+              />
+            }
           />
 
           <h4>
-            <FormattedMessage id="Settings.General.CommandVisibility" defaultMessage="Command Visibility" />
+            <FormattedMessage
+              id="Settings.General.CommandVisibility"
+              defaultMessage="Command Visibility"
+            />
           </h4>
           <hr />
           <Checkbox
             name={'Shutdown Enabled'}
             value={settings.command_shutdown_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'command_shutdown_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.ShutdownEnabled" defaultMessage="Shutdown Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'command_shutdown_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.ShutdownEnabled"
+                defaultMessage="Shutdown Enabled"
+              />
+            }
           />
           <Checkbox
             name={'Reboot Enabled'}
             value={settings.command_reboot_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'command_reboot_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.RebootEnabled" defaultMessage="Reboot Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'command_reboot_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.RebootEnabled"
+                defaultMessage="Reboot Enabled"
+              />
+            }
           />
           <Checkbox
             name={'Hibernate Enabled'}
             value={settings.command_hibernate_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'command_hibernate_enabled')}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'command_hibernate_enabled'
+            )}
             localeContent={
-              <FormattedMessage id="Settings.General.HibernateEnabled" defaultMessage="Hibernate Enabled" />
+              <FormattedMessage
+                id="Settings.General.HibernateEnabled"
+                defaultMessage="Hibernate Enabled"
+              />
             }
           />
           <Checkbox
             name={'Sleep Enabled'}
             value={settings.command_sleep_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'command_sleep_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.SleepEnabled" defaultMessage="Sleep Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'command_sleep_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.SleepEnabled"
+                defaultMessage="Sleep Enabled"
+              />
+            }
           />
 
           <h4>
-            <FormattedMessage id="Settings.General.AvatarVisibility" defaultMessage="Avatar Visibility" />
+            <FormattedMessage
+              id="Settings.General.AvatarVisibility"
+              defaultMessage="Avatar Visibility"
+            />
           </h4>
           <hr />
           <Checkbox
             name={'Avatar Enabled'}
             value={settings.avatar_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'avatar_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.AvatarEnabled" defaultMessage="Avatar Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'avatar_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.AvatarEnabled"
+                defaultMessage="Avatar Enabled"
+              />
+            }
           />
 
           <Checkbox
             name={'Background Enabled'}
             value={settings.avatar_background_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'avatar_background_enabled')}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'avatar_background_enabled'
+            )}
             localeContent={
-              <FormattedMessage id="Settings.General.BackgroundEnabled" defaultMessage="Background Enabled" />
+              <FormattedMessage
+                id="Settings.General.BackgroundEnabled"
+                defaultMessage="Background Enabled"
+              />
             }
           />
 
           <h4>
-            <FormattedMessage id="Settings.General.HostnameVisibility" defaultMessage="Hostname Visibility" />
+            <FormattedMessage
+              id="Settings.General.HostnameVisibility"
+              defaultMessage="Hostname Visibility"
+            />
           </h4>
           <hr />
           <Checkbox
             name={'Hostname Enabled'}
             value={settings.hostname_enabled}
-            boundFunction={props.settingsToggleBinary.bind(this, 'hostname_enabled')}
-            localeContent={<FormattedMessage id="Settings.General.HostnameEnabled" defaultMessage="Hostname Enabled" />}
+            boundFunction={props.settingsToggleBinary.bind(
+              this,
+              'hostname_enabled'
+            )}
+            localeContent={
+              <FormattedMessage
+                id="Settings.General.HostnameEnabled"
+                defaultMessage="Hostname Enabled"
+              />
+            }
           />
         </ul>
       </div>

@@ -24,10 +24,6 @@
     "defaultMessage": "Eye Candy"
   },
   {
-    "id": "Settings.Style.StaggeredAnimations",
-    "defaultMessage": "Staggered Animations"
-  },
-  {
     "id": "Settings.Style.BackgroundBlur",
     "defaultMessage": "Background Blur"
   },

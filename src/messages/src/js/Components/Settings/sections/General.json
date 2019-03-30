@@ -4,6 +4,10 @@
     "defaultMessage": "User Functionality"
   },
   {
+    "id": "Settings.General.DefaultUser",
+    "defaultMessage": "Default User"
+  },
+  {
     "id": "Settings.General.ShowUserSwitcher",
     "defaultMessage": "Show User Switcher"
   },

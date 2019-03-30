@@ -30,7 +30,10 @@ export function addAdditionalSettings(state, language = 'tr') {
       : '/usr/share/lightdm-webkit/themes/girizgah/src/img/logos/pardus-01.png';
 
   let dateFormatString;
-  if (language.toLowerCase() === 'tr' || language.toLowerCase().includes('tr')) {
+  if (
+    language.toLowerCase() === 'tr' ||
+    language.toLowerCase().includes('tr')
+  ) {
     dateFormatString = '%d %B %Y %A';
   } else {
     dateFormatString = '%A, the %o of %B';
@@ -40,10 +43,10 @@ export function addAdditionalSettings(state, language = 'tr') {
     active: false,
     minimized: false,
     distro: distroDefault,
+    default_user: '',
     page_zoom: 1.0,
     avatar_background_enabled: false,
     font_scale: 1.0,
-    staggered_animations_enabled: true,
     user_switcher_enabled: true,
     date_format: dateFormatString,
     time_format: '%H:%M',
@@ -76,7 +79,10 @@ export const SettingsReducer = (state, action) => {
       var newSettings = { ...state.cachedSettings };
 
       // Create a notification
-      window.notifications.generate(window.formatMessage(messages.reject), 'success');
+      window.notifications.generate(
+        window.formatMessage(messages.reject),
+        'success'
+      );
 
       // This shouldn't be here. It is, though.
       setPageZoom(newSettings.page_zoom);
@@ -87,7 +93,10 @@ export const SettingsReducer = (state, action) => {
       var newSettings = { ...state.cachedSettings, ...action.theme };
 
       // Create a notification
-      window.notifications.generate(window.formatMessage(messages.applyTheme, { themeName: action.name }), 'success');
+      window.notifications.generate(
+        window.formatMessage(messages.applyTheme, { themeName: action.name }),
+        'success'
+      );
 
       // This shouldn't be here. It is, though.
       setPageZoom(newSettings.page_zoom);
@@ -104,7 +113,10 @@ export const SettingsReducer = (state, action) => {
       var newCache = { ...state.settings };
 
       // Create a notification
-      window.notifications.generate(window.formatMessage(messages.save), 'success');
+      window.notifications.generate(
+        window.formatMessage(messages.save),
+        'success'
+      );
 
       return { ...state, cachedSettings: newCache };
 
