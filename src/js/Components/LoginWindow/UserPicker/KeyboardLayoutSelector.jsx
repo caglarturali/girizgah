@@ -4,8 +4,9 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cxs from 'cxs';
 
-export default class KeyboardLayoutSelector extends Component {
+class KeyboardLayoutSelector extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,11 +21,16 @@ export default class KeyboardLayoutSelector extends Component {
   }
 
   render() {
-    let classes = ['right'];
+    let classes = ['keyboard-sel'];
+    classes.push(
+      cxs({
+        'background-color': this.props.buttonColor
+      })
+    );
 
     return (
-      <div className={classes.join(' ')}>
-        <div className="keyboard-sel">
+      <div className="right">
+        <div className={classes.join(' ')}>
           <select
             onChange={this.handleChange.bind(this)}
             value={this.props.activeLayout}
@@ -42,6 +48,9 @@ export default class KeyboardLayoutSelector extends Component {
 }
 
 KeyboardLayoutSelector.propTypes = {
+  buttonColor: PropTypes.string.isRequired,
   handleLayoutChange: PropTypes.func.isRequired,
   activeLayout: PropTypes.string.isRequired
 };
+
+export default KeyboardLayoutSelector;

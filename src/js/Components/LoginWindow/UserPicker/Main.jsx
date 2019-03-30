@@ -12,7 +12,7 @@ import UserSwitchButton from './UserSwitcher/UserSwitchButton';
 import UserSwitcher from './UserSwitcher';
 import UserPanelForm from './Form';
 
-import KeyboardLayoutSelector from './UserSwitcher/KeyboardLayoutSelector';
+import KeyboardLayoutSelector from './KeyboardLayoutSelector';
 
 import { defineMessages } from 'react-intl';
 
@@ -323,6 +323,7 @@ class UserPicker extends React.Component {
               />
             </If>
             <KeyboardLayoutSelector
+              buttonColor={settings.style_login_button_color}
               activeLayout={this.props.activeLayout}
               handleLayoutChange={this.handleLayoutChange.bind(this)}
             />
