@@ -125,17 +125,15 @@ class WallpaperSwitcher extends React.Component {
   }
 
   handleSwitcherActivation() {
-    if (this.state.switcher.active === false) {
-      setTimeout(() => {
-        let switcher = this.state.switcher;
-        switcher.active = true;
-        this.cycleWallpaper();
+    setTimeout(() => {
+      let switcher = this.state.switcher;
+      switcher.active = true;
+      this.cycleWallpaper();
 
-        this.setState({
-          switcher: switcher
-        });
-      }, 100);
-    }
+      this.setState({
+        switcher: switcher
+      });
+    }, 100);
   }
 
   rejectWallpaper() {
