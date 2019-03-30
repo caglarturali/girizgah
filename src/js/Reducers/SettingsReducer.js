@@ -37,7 +37,6 @@ export function addAdditionalSettings(state) {
     avatar_background_enabled: false,
     font_scale: 1.0,
     user_switcher_enabled: true,
-    time_seconds_enabled: true,
     background_blur_enabled: false,
     background_blur_radius: '8px',
 

@@ -5,6 +5,7 @@ export default {
   font_scale: '1',
   date_enabled: true,
   time_enabled: true,
+  time_seconds_enabled: true,
   hostname_enabled: true,
   command_shutdown_enabled: true,
   command_reboot_enabled: true,
