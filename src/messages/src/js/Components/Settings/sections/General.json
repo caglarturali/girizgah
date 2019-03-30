@@ -20,20 +20,12 @@
     "defaultMessage": "Date Enabled"
   },
   {
-    "id": "Settings.General.DateFormat",
-    "defaultMessage": "Date Format"
-  },
-  {
     "id": "Settings.General.TimeEnabled",
     "defaultMessage": "Time Enabled"
   },
   {
     "id": "Settings.General.TimeSecondsEnabled",
     "defaultMessage": "Seconds Counter Enabled"
-  },
-  {
-    "id": "Settings.General.TimeFormat",
-    "defaultMessage": "Time Format"
   },
   {
     "id": "Settings.General.CommandVisibility",

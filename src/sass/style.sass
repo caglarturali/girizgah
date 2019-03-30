@@ -50,38 +50,42 @@ body
 
 #date-time-display
   font-family: 'Pardus Regular'
-  position: fixed
-  bottom: 20px
-  left: 20px
   color: #e4e4e4
+  width: 100%
 
-.date, .clock
-  display: block
-  opacity: 0
-  text-align: left
-
-  transition: all 1s
-
-  @extend .noselect
-
-  &.loaded
-    opacity: 1
-
-.clock
-  font-size: 5em
-  font-style: normal
-  font-weight: 300
-
-  .seconds
-    font-size: 50%
+  .date, .clock
+    display: block
+    opacity: 0
     position: absolute
-    top: 0
-    padding: 6px 0 0 4px
-    opacity: .9
+    bottom: $datetime-gutter
 
-.date
-  font-size: 2em
-  padding-top: 10px
+    transition: all 1s
+
+    @extend .noselect
+
+    &.loaded
+      opacity: 1
+
+  .clock
+    float: left
+    text-align: left
+    font-size: 5em
+    font-style: normal
+    font-weight: 300
+    left: $datetime-gutter
+
+    .seconds
+      font-size: 50%
+      position: absolute
+      top: 0
+      padding: 6px 0 0 4px
+      opacity: .9
+
+  .date
+    float: right
+    text-align: right
+    font-size: 2.2em
+    right: $datetime-gutter
   
 .notifications-container
   position: absolute

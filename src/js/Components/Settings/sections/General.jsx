@@ -118,17 +118,6 @@ export const GeneralSection = props => {
               />
             }
           />
-          <TextField
-            name={'Date Format'}
-            value={settings.date_format}
-            boundFunction={props.settingsSetValue.bind(this, 'date_format')}
-            localeContent={
-              <FormattedMessage
-                id="Settings.General.DateFormat"
-                defaultMessage="Date Format"
-              />
-            }
-          />
           <Checkbox
             name={'Time Enabled'}
             value={settings.time_enabled}
@@ -157,18 +146,7 @@ export const GeneralSection = props => {
               />
             }
           />
-          <TextField
-            name={'Time Format'}
-            value={settings.time_format}
-            boundFunction={props.settingsSetValue.bind(this, 'time_format')}
-            localeContent={
-              <FormattedMessage
-                id="Settings.General.TimeFormat"
-                defaultMessage="Time Format"
-              />
-            }
-          />
-
+          
           <h4>
             <FormattedMessage
               id="Settings.General.CommandVisibility"

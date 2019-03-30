@@ -1,4 +1,4 @@
-// Clock -> Required by Components/CommandPanel
+// TimeDisplay -> Required by DateTimeDisplay/Main
 // --------------------------------------
 // Just a clock.
 
@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-class Clock extends React.Component {
+class TimeDisplay extends React.Component {
   constructor(props) {
     super(props);
 
@@ -29,7 +29,7 @@ class Clock extends React.Component {
   }
 
   updateClock() {
-    let timeFormatString = this.props.settings.time_format;
+    let timeFormatString = '%H:%M';
     if (this.props.isSecondsEnabled) {
       timeFormatString += '<span class="seconds">%S</span>';
     }
@@ -46,20 +46,26 @@ class Clock extends React.Component {
     let classes = ['clock'];
     let currentTime = this.state.formattedTime;
 
-    if (this.state.initialized === true && this.props.settings.time_enabled === true) {
+    if (
+      this.state.initialized === true &&
+      this.props.settings.time_enabled === true
+    ) {
       classes.push('loaded');
     } else if (this.props.settings.time_enabled === false) {
       classes.push('invisible');
     }
 
     return ReactDOM.createPortal(
-      <div className={classes.join(' ')} dangerouslySetInnerHTML={{ __html: currentTime }} />,
+      <div
+        className={classes.join(' ')}
+        dangerouslySetInnerHTML={{ __html: currentTime }}
+      />,
       document.getElementById('time-display')
     );
   }
 }
 
-Clock.propTypes = {
+TimeDisplay.propTypes = {
   settings: PropTypes.object.isRequired,
   isSecondsEnabled: PropTypes.bool.isRequired
 };
@@ -72,4 +78,4 @@ export default connect(
     };
   },
   null
-)(Clock);
+)(TimeDisplay);

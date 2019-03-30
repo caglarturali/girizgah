@@ -21,23 +21,12 @@ const messages = defineMessages({
   }
 });
 
-export function addAdditionalSettings(state, language = 'tr') {
+export function addAdditionalSettings(state) {
   // Define our defaults
-
   let distroDefault =
     window.__debug === true
       ? 'src/sample/logos/pardus-01.png'
       : '/usr/share/lightdm-webkit/themes/girizgah/src/img/logos/pardus-01.png';
-
-  let dateFormatString;
-  if (
-    language.toLowerCase() === 'tr' ||
-    language.toLowerCase().includes('tr')
-  ) {
-    dateFormatString = '%d %B %Y %A';
-  } else {
-    dateFormatString = '%A, the %o of %B';
-  }
 
   let defaults = {
     active: false,
@@ -48,8 +37,6 @@ export function addAdditionalSettings(state, language = 'tr') {
     avatar_background_enabled: false,
     font_scale: 1.0,
     user_switcher_enabled: true,
-    date_format: dateFormatString,
-    time_format: '%H:%M',
     time_seconds_enabled: true,
     background_blur_enabled: false,
     background_blur_radius: '8px',
