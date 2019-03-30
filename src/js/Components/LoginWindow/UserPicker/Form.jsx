@@ -10,7 +10,7 @@ import cxs from 'cxs';
 import { connect } from 'react-redux';
 
 import PasswordField from './PasswordField';
-import SessionSelector from './SessionSelector';
+import SessionSelector from './SessionSwitcher/';
 
 const submitButton = require('img/arrow.svg');
 
