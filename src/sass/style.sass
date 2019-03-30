@@ -49,12 +49,13 @@ body
 /*****************************************************************/
 
 #date-time-display
+  font-family: 'Pardus Regular'
   position: fixed
-  bottom: 32px
-  left: 32px
+  bottom: 20px
+  left: 20px
+  color: #e4e4e4
 
 .date, .clock
-  color: #fff
   display: block
   opacity: 0
   text-align: left
@@ -66,26 +67,21 @@ body
   &.loaded
     opacity: 1
 
-  em
-    font-weight: bold
-
 .clock
-  font-size: 4em
+  font-size: 5em
   font-style: normal
   font-weight: 300
 
   .seconds
-    font-size: 30%
-    font-weight: bold
+    font-size: 50%
     position: absolute
     top: 0
     padding: 6px 0 0 4px
     opacity: .9
 
 .date
-  font-size: 1em
-  font-weight: bold
-  padding-top: 15px
+  font-size: 2em
+  padding-top: 10px
   
 .notifications-container
   position: absolute
