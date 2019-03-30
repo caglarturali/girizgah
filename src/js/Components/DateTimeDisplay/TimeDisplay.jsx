@@ -15,7 +15,8 @@ class TimeDisplay extends React.Component {
 
     this.state = {
       initialized: false,
-      formattedTime: ''
+      formattedTime: '',
+      formattedSeconds: ''
     };
   }
 
@@ -29,37 +30,48 @@ class TimeDisplay extends React.Component {
   }
 
   updateClock() {
-    let timeFormatString = '%H:%M';
-    if (this.props.isSecondsEnabled) {
-      timeFormatString += '<span class="seconds">%S</span>';
-    }
-    this.setState({
-      formattedTime: Strftime(timeFormatString)
-    });
+    const timeFormatString = '%H:%M';
+    const secondsFormatString = '%S';
 
-    setTimeout(() => {
-      this.updateClock();
-    }, 1000);
+    this.setState(
+      {
+        formattedTime: Strftime(timeFormatString),
+        formattedSeconds: Strftime(secondsFormatString)
+      },
+      () => {
+        setTimeout(() => {
+          this.updateClock();
+        }, 1000);
+      }
+    );
   }
 
   render() {
     let classes = ['clock'];
-    let currentTime = this.state.formattedTime;
+    let secondsClasses = ['seconds'];
 
-    if (
-      this.state.initialized === true &&
-      this.props.settings.time_enabled === true
-    ) {
+    let currentTime = this.state.formattedTime;
+    let currentSeconds = this.state.formattedSeconds;
+
+    // Main time
+    if (this.state.initialized === true && this.props.isTimeEnabled === true) {
       classes.push('loaded');
-    } else if (this.props.settings.time_enabled === false) {
+    } else if (this.props.isTimeEnabled === false) {
       classes.push('invisible');
     }
 
+    // Seconds counter
+    if (this.state.initialized === true && this.props.isSecondsEnabled) {
+      secondsClasses.push('loaded');
+    } else if (this.props.isSecondsEnabled === false) {
+      secondsClasses.push('invisible');
+    }
+
     return ReactDOM.createPortal(
-      <div
-        className={classes.join(' ')}
-        dangerouslySetInnerHTML={{ __html: currentTime }}
-      />,
+      <div className={classes.join(' ')}>
+        {currentTime}
+        <span className={secondsClasses.join(' ')}>{currentSeconds}</span>
+      </div>,
       document.getElementById('time-display')
     );
   }
@@ -67,6 +79,7 @@ class TimeDisplay extends React.Component {
 
 TimeDisplay.propTypes = {
   settings: PropTypes.object.isRequired,
+  isTimeEnabled: PropTypes.bool.isRequired,
   isSecondsEnabled: PropTypes.bool.isRequired
 };
 
@@ -74,6 +87,7 @@ export default connect(
   state => {
     return {
       settings: state.settings,
+      isTimeEnabled: state.settings.time_enabled,
       isSecondsEnabled: state.settings.time_seconds_enabled
     };
   },

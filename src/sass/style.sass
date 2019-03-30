@@ -79,7 +79,11 @@ body
       position: absolute
       top: 0
       padding: 6px 0 0 4px
-      opacity: .9
+      opacity: 0
+      transition: all 500ms
+
+      &.loaded
+        opacity: .9
 
   .date
     float: right
