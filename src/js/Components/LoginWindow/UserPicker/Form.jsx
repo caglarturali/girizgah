@@ -112,7 +112,9 @@ class UserPanelForm extends React.Component {
 
     return (
       <form className="login-form" onSubmit={this.props.handleLoginSubmit}>
-        <div className={usernameClasses.join(' ')}>{this.props.activeUser.display_name}</div>
+        <div className={usernameClasses.join(' ')}>
+          {this.props.activeUser.display_name}
+        </div>
         <div className={inputContainerClasses.join(' ')}>
           <div className="user-password-container">
             <PasswordField
@@ -122,7 +124,10 @@ class UserPanelForm extends React.Component {
             />
           </div>
           <div className="submit-row">
-            <div className={sessionSelectButtonClasses.join(' ')} onClick={this.openSessionSelector.bind(this)}>
+            <div
+              className={sessionSelectButtonClasses.join(' ')}
+              onClick={this.openSessionSelector.bind(this)}
+            >
               <div className="text">{this.props.activeSession.name}</div>
             </div>
             <div className="right">

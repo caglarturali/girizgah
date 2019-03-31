@@ -145,7 +145,7 @@ export const GeneralSection = props => {
               />
             }
           />
-          
+
           <h4>
             <FormattedMessage
               id="Settings.General.CommandVisibility"

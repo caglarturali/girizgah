@@ -19,10 +19,16 @@ const saveSettings = props => {
 export const SaveDialogue = props => {
   return (
     <div className="save-dialogue">
-      <button className="settings-reject" onClick={rejectSettings.bind(this, props)}>
+      <button
+        className="settings-reject"
+        onClick={rejectSettings.bind(this, props)}
+      >
         <FormattedMessage id="Settings.Revert" defaultMessage="Revert" />
       </button>
-      <button className="settings-save" onClick={saveSettings.bind(this, props)}>
+      <button
+        className="settings-save"
+        onClick={saveSettings.bind(this, props)}
+      >
         <FormattedMessage id="Settings.Save" defaultMessage="Save" />
       </button>
     </div>

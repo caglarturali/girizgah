@@ -8,12 +8,19 @@ export function getWallpaperDirectory() {
     return 'src/sample/wallpapers/';
   }
 
-  let wallpapersDirectory = window.config.get_str('branding', 'background_images');
+  let wallpapersDirectory = window.config.get_str(
+    'branding',
+    'background_images'
+  );
 
   // Do NOT allow the default wallpaper directory to set, as this will prevent the default provided backgrounds from
   // being used 100% of the time in a stock install.
-  if (wallpapersDirectory == '/usr/share/backgrounds' || wallpapersDirectory == '/usr/share/backgrounds/') {
-    wallpapersDirectory = '/usr/share/lightdm-webkit/themes/girizgah/src/img/wallpapers/';
+  if (
+    wallpapersDirectory == '/usr/share/backgrounds' ||
+    wallpapersDirectory == '/usr/share/backgrounds/'
+  ) {
+    wallpapersDirectory =
+      '/usr/share/lightdm-webkit/themes/girizgah/src/img/wallpapers/';
   }
 
   return wallpapersDirectory;
@@ -23,7 +30,13 @@ export function getWallpapers(directory) {
   // If we're in test mode, we stick to a static rotation of three default wallpapers.
   // In production, it is possible that a user will change what wallpapers are available.
   if (window.__debug === true) {
-    return ['wallpaper-01.jpg', 'wallpaper-02.jpg', 'wallpaper-03.jpg', 'wallpaper-04.jpg', 'wallpaper-05.jpg'];
+    return [
+      'wallpaper-01.jpg',
+      'wallpaper-02.jpg',
+      'wallpaper-03.jpg',
+      'wallpaper-04.jpg',
+      'wallpaper-05.jpg'
+    ];
   }
 
   let wallpapers;

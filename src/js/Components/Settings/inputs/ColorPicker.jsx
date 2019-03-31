@@ -44,23 +44,36 @@ export class ColorPicker extends React.Component {
     if (this.state.active === true) {
       swatchContainerClasses.push('active');
 
-      colorPicker = <ChromePicker color={this.state.color} onChange={this.handleChange.bind(this)} />;
+      colorPicker = (
+        <ChromePicker
+          color={this.state.color}
+          onChange={this.handleChange.bind(this)}
+        />
+      );
     }
 
     return (
       <li className="settings-item settings-color">
         <label htmlFor={elementID} title={this.props.name}>
-          {this.props.localeContent ? this.props.localeContent : this.props.name}
+          {this.props.localeContent
+            ? this.props.localeContent
+            : this.props.name}
         </label>
         <div id={elementID} className={swatchContainerClasses.join(' ')}>
           <div className="swatch" onClick={this.handleOpen.bind(this)}>
-            <div className="swatch-fg" style={{ backgroundColor: this.props.value }} />
+            <div
+              className="swatch-fg"
+              style={{ backgroundColor: this.props.value }}
+            />
             <div className="swatch-bg swatch-bg-black" />
             <div className="swatch-bg swatch-bg-gray" />
             <div className="swatch-bg swatch-bg-white" />
           </div>
           {colorPicker}
-          <div className="colorpicker-background" onClick={this.handleClose.bind(this)} />
+          <div
+            className="colorpicker-background"
+            onClick={this.handleClose.bind(this)}
+          />
         </div>
       </li>
     );

@@ -16,14 +16,22 @@ export const DropdownOption = option => {
   );
 };
 
-export const Dropdown = ({ name, value, options, boundFunction, localeContent }) => {
+export const Dropdown = ({
+  name,
+  value,
+  options,
+  boundFunction,
+  localeContent
+}) => {
   let elementID = `option-${name.replace(' ', '-')}`;
   let items = options.map(option => DropdownOption(option));
 
   return (
     <li className="settings-item">
       <If condition={name !== undefined}>
-        <label htmlFor={elementID}>{localeContent ? localeContent : name}</label>
+        <label htmlFor={elementID}>
+          {localeContent ? localeContent : name}
+        </label>
       </If>
       <select id={elementID} onChange={boundFunction} value={value}>
         {items}
@@ -35,7 +43,9 @@ export const Dropdown = ({ name, value, options, boundFunction, localeContent })
 Dropdown.propTypes = {
   name: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  options: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number])).isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.object, PropTypes.string, PropTypes.number])
+  ).isRequired,
   boundFunction: PropTypes.func.isRequired,
   localeContent: PropTypes.object.isRequired
 };

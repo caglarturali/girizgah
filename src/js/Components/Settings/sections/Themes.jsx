@@ -49,23 +49,46 @@ class Theme extends React.Component {
 
   render() {
     let colorItems = this.getColors().map(([name, color]) => (
-      <li key={name} className="theme-color-block" style={{ backgroundColor: color }} alt={color} title={color}>
+      <li
+        key={name}
+        className="theme-color-block"
+        style={{ backgroundColor: color }}
+        alt={color}
+        title={color}
+      >
         &nbsp;
       </li>
     ));
 
-    let isDefaultTheme = !(Object.keys(DefaultThemes).indexOf(this.props.name) !== -1);
+    let isDefaultTheme = !(
+      Object.keys(DefaultThemes).indexOf(this.props.name) !== -1
+    );
 
     return (
       <div className="theme">
         <div className="upper">
           <h5 className="theme-name">{this.props.name}</h5>
-          <button onClick={this.props.loadTheme.bind(this, this.props.name, this.props.theme)}>
-            <FormattedMessage id="Settings.Themes.Preview" defaultMessage="Preview" />
+          <button
+            onClick={this.props.loadTheme.bind(
+              this,
+              this.props.name,
+              this.props.theme
+            )}
+          >
+            <FormattedMessage
+              id="Settings.Themes.Preview"
+              defaultMessage="Preview"
+            />
           </button>
           <If condition={isDefaultTheme}>
-            <button className="delete" onClick={this.props.deleteTheme.bind(this, this.props.name)}>
-              <FormattedMessage id="Settings.Themes.Delete" defaultMessage="Delete" />
+            <button
+              className="delete"
+              onClick={this.props.deleteTheme.bind(this, this.props.name)}
+            >
+              <FormattedMessage
+                id="Settings.Themes.Delete"
+                defaultMessage="Delete"
+              />
             </button>
           </If>
         </div>
@@ -100,7 +123,10 @@ export class SettingsThemes extends React.Component {
       themes: { ...Settings.getUserThemes(), ...DefaultThemes }
     });
 
-    window.notifications.generate(window.formatMessage(messages.themeDeleted), 'success');
+    window.notifications.generate(
+      window.formatMessage(messages.themeDeleted),
+      'success'
+    );
   }
 
   handleLoadTheme(themeName, theme) {
@@ -117,7 +143,10 @@ export class SettingsThemes extends React.Component {
 
     let themeName = this.nodes.themeName.value.trim();
     if (!themeName) {
-      window.notifications.generate(window.formatMessage(messages.enterValidName), 'error');
+      window.notifications.generate(
+        window.formatMessage(messages.enterValidName),
+        'error'
+      );
       return;
     }
 
@@ -127,7 +156,10 @@ export class SettingsThemes extends React.Component {
       themes: { ...Settings.getUserThemes(), ...DefaultThemes }
     });
 
-    window.notifications.generate(window.formatMessage(messages.themeSaved), 'success');
+    window.notifications.generate(
+      window.formatMessage(messages.themeSaved),
+      'success'
+    );
   }
 
   render() {
@@ -146,7 +178,10 @@ export class SettingsThemes extends React.Component {
       <div className="settings-themes">
         <div className="theme-saver">
           <p>
-            <FormattedMessage id="Settings.Themes.SaveAsTheme" defaultMessage="Save current settings as a theme?" />
+            <FormattedMessage
+              id="Settings.Themes.SaveAsTheme"
+              defaultMessage="Save current settings as a theme?"
+            />
           </p>
           <input
             type="text"
@@ -155,8 +190,14 @@ export class SettingsThemes extends React.Component {
             placeholder={window.formatMessage(messages.placeholderThemeName)}
             ref={node => (this.nodes.themeName = node)}
           />
-          <button className="save-theme" onClick={this.handleSaveTheme.bind(this)}>
-            <FormattedMessage id="Settings.Themes.SaveTheme" defaultMessage="Save Theme" />
+          <button
+            className="save-theme"
+            onClick={this.handleSaveTheme.bind(this)}
+          >
+            <FormattedMessage
+              id="Settings.Themes.SaveTheme"
+              defaultMessage="Save Theme"
+            />
           </button>
         </div>
         <div className="theme-list">{themeItems}</div>

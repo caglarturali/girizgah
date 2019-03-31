@@ -17,7 +17,8 @@ export function randomRange(min, max, decimals = 0) {
   if (decimals === 0) {
     result = Math.floor(result);
   } else {
-    result = Math.floor(result * Math.pow(10, decimals)) / Math.pow(10, decimals);
+    result =
+      Math.floor(result * Math.pow(10, decimals)) / Math.pow(10, decimals);
   }
 
   return result;

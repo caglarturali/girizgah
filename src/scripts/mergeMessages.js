@@ -50,4 +50,7 @@ mkdirpSync(LANG_DIR);
 
 // Merge aggregated default messages with the translated json files and
 // write the messages to this directory
-fs.writeFileSync(`${LANG_DIR}data.json`, JSON.stringify({ en: defaultMessages, ...mergedTranslations }, null, 2));
+fs.writeFileSync(
+  `${LANG_DIR}data.json`,
+  JSON.stringify({ en: defaultMessages, ...mergedTranslations }, null, 2)
+);

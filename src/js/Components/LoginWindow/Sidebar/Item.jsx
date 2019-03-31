@@ -43,8 +43,14 @@ export const Item = ({ command, handleCommand, settings, content }) => {
   });
 
   return (
-    <div className={classes.join(' ')} onClick={handleCommand.bind(this, command, disabled)}>
-      <div className={iconWrapperClasses.join(' ')} dangerouslySetInnerHTML={{ __html: SVGMap[command] }} />
+    <div
+      className={classes.join(' ')}
+      onClick={handleCommand.bind(this, command, disabled)}
+    >
+      <div
+        className={iconWrapperClasses.join(' ')}
+        dangerouslySetInnerHTML={{ __html: SVGMap[command] }}
+      />
       <div className={`text ${textStyle}`}>{content}</div>
     </div>
   );

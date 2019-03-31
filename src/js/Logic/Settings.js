@@ -6,7 +6,10 @@
 export const LOCALSTORAGE_ENABLED = typeof Storage !== 'undefined';
 
 if (!LOCALSTORAGE_ENABLED) {
-  window.notifications.generate('localStorage not supported. Theme unable to function!', 'error');
+  window.notifications.generate(
+    'localStorage not supported. Theme unable to function!',
+    'error'
+  );
   throw 'localStorage not supported. Theme unable to function!';
 }
 

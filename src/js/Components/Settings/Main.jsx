@@ -91,15 +91,30 @@ class Settings extends React.Component {
     let categories = [
       {
         categoryName: 'General',
-        localeName: <FormattedMessage id="Settings.Category.General" defaultMessage="General" />
+        localeName: (
+          <FormattedMessage
+            id="Settings.Category.General"
+            defaultMessage="General"
+          />
+        )
       },
       {
         categoryName: 'Style',
-        localeName: <FormattedMessage id="Settings.Category.Style" defaultMessage="Style" />
+        localeName: (
+          <FormattedMessage
+            id="Settings.Category.Style"
+            defaultMessage="Style"
+          />
+        )
       },
       {
         categoryName: 'Themes',
-        localeName: <FormattedMessage id="Settings.Category.Themes" defaultMessage="Themes" />
+        localeName: (
+          <FormattedMessage
+            id="Settings.Category.Themes"
+            defaultMessage="Themes"
+          />
+        )
       }
     ];
 
@@ -148,10 +163,16 @@ class Settings extends React.Component {
       <div>
         <div className="settings-handle" ref={node => (this.handle = node)}>
           <ul>
-            <li className="settings-minimize" onClick={this.handleSettingsMinimize.bind(this)}>
+            <li
+              className="settings-minimize"
+              onClick={this.handleSettingsMinimize.bind(this)}
+            >
               &#8722;
             </li>
-            <li className="settings-close" onClick={this.handleSettingsClose.bind(this)}>
+            <li
+              className="settings-close"
+              onClick={this.handleSettingsClose.bind(this)}
+            >
               &#215;
             </li>
           </ul>

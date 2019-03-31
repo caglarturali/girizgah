@@ -10,7 +10,12 @@ export const Checkbox = ({ name, value, boundFunction, localeContent }) => {
 
   return (
     <li className="settings-item">
-      <input id={elementID} type="checkbox" checked={value} onChange={boundFunction} />
+      <input
+        id={elementID}
+        type="checkbox"
+        checked={value}
+        onChange={boundFunction}
+      />
       <label htmlFor={elementID}>
         {localeContent ? localeContent : name}
         <div className="fake-checkbox" onChange={boundFunction} />

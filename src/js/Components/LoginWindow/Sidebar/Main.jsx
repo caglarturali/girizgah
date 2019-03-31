@@ -25,7 +25,10 @@ class Sidebar extends React.Component {
     event.preventDefault();
 
     if (disabled !== false) {
-      window.notifications.generate(`${command} is disabled on this system.`, 'error');
+      window.notifications.generate(
+        `${command} is disabled on this system.`,
+        'error'
+      );
       return false;
     }
 
@@ -36,23 +39,55 @@ class Sidebar extends React.Component {
     let commands = {
       Shutdown: {
         command: 'Shutdown',
-        isActive: window.lightdm.can_shutdown && this.props.settings.command_shutdown_enabled,
-        content: <FormattedMessage key="Power.Shutdown" id="Power.Shutdown" defaultMessage="Shutdown" />
+        isActive:
+          window.lightdm.can_shutdown &&
+          this.props.settings.command_shutdown_enabled,
+        content: (
+          <FormattedMessage
+            key="Power.Shutdown"
+            id="Power.Shutdown"
+            defaultMessage="Shutdown"
+          />
+        )
       },
       Reboot: {
         command: 'Reboot',
-        isActive: window.lightdm.can_restart && this.props.settings.command_reboot_enabled,
-        content: <FormattedMessage key="Power.Reboot" id="Power.Reboot" defaultMessage="Reboot" />
+        isActive:
+          window.lightdm.can_restart &&
+          this.props.settings.command_reboot_enabled,
+        content: (
+          <FormattedMessage
+            key="Power.Reboot"
+            id="Power.Reboot"
+            defaultMessage="Reboot"
+          />
+        )
       },
       Hibernate: {
         command: 'Hibernate',
-        isActive: window.lightdm.can_hibernate && this.props.settings.command_hibernate_enabled,
-        content: <FormattedMessage key="Power.Hibernate" id="Power.Hibernate" defaultMessage="Hibernate" />
+        isActive:
+          window.lightdm.can_hibernate &&
+          this.props.settings.command_hibernate_enabled,
+        content: (
+          <FormattedMessage
+            key="Power.Hibernate"
+            id="Power.Hibernate"
+            defaultMessage="Hibernate"
+          />
+        )
       },
       Sleep: {
         command: 'Sleep',
-        isActive: window.lightdm.can_suspend && this.props.settings.command_sleep_enabled,
-        content: <FormattedMessage key="Power.Sleep" id="Power.Sleep" defaultMessage="Sleep" />
+        isActive:
+          window.lightdm.can_suspend &&
+          this.props.settings.command_sleep_enabled,
+        content: (
+          <FormattedMessage
+            key="Power.Sleep"
+            id="Power.Sleep"
+            defaultMessage="Sleep"
+          />
+        )
       }
     };
 
@@ -63,7 +98,10 @@ class Sidebar extends React.Component {
 
     // Are both hibernation and suspend disabled?
     // Add the row back and disable it so that the user is aware of what's happening.
-    if (window.lightdm.can_suspend === false && window.lightdm.can_hibernate === false) {
+    if (
+      window.lightdm.can_suspend === false &&
+      window.lightdm.can_hibernate === false
+    ) {
       enabledCommands.push('Sleep.disabled');
     }
 
@@ -90,7 +128,10 @@ class Sidebar extends React.Component {
     return (
       <div className={`command-panel ${styles}`}>
         <WallpaperSwitcher />
-        <List enabledCommands={commands} handleCommand={this.handleCommand.bind(this)} />
+        <List
+          enabledCommands={commands}
+          handleCommand={this.handleCommand.bind(this)}
+        />
         <div className="bottom">
           <div className={hostnameClasses.join(' ')}>{hostname}</div>
           <div className="left">

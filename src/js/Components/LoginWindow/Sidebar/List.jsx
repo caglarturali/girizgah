@@ -9,7 +9,12 @@ import Item from './Item';
 
 export const List = ({ enabledCommands, handleCommand }) => {
   let items = enabledCommands.map(command => (
-    <Item key={command.command} command={command.command} handleCommand={handleCommand} content={command.content} />
+    <Item
+      key={command.command}
+      command={command.command}
+      handleCommand={handleCommand}
+      content={command.content}
+    />
   ));
 
   return <div className="commands-wrapper">{items}</div>;

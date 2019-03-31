@@ -11,7 +11,12 @@ export const TextField = ({ name, value, boundFunction, localeContent }) => {
   return (
     <li className="settings-item">
       <label htmlFor={elementID}>{localeContent ? localeContent : name}</label>
-      <input id={elementID} type="text" onInput={boundFunction} defaultValue={value} />
+      <input
+        id={elementID}
+        type="text"
+        onInput={boundFunction}
+        defaultValue={value}
+      />
     </li>
   );
 };
