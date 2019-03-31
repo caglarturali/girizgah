@@ -296,16 +296,17 @@ class UserPicker extends React.Component {
 
     let style = cxs(_styles);
 
+    const userImage = this.props.activeUser.image
+      ? this.props.activeUser.image
+      : 'src/img/default-user.png';
+
     return (
       <div className={`user-panel ${style}`}>
         <div className={loginPanelClasses.join(' ')}>
           <div className={avatarClasses.join(' ')}>
             <div className={avatarBackgroundClasses.join(' ')}>
               <div className="avatar-mask">
-                <img
-                  className="user-avatar"
-                  src={this.props.activeUser.image}
-                />
+                <img className="user-avatar" src={userImage} />
               </div>
             </div>
           </div>
