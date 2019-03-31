@@ -10,7 +10,7 @@ import cxs from 'cxs';
 import { connect } from 'react-redux';
 
 import PasswordField from './PasswordField';
-import SessionSelector from './SessionSwitcher/';
+import SessionSwitcher from './SessionSwitcher/';
 
 const submitButton = require('img/arrow.svg');
 
@@ -133,7 +133,7 @@ class UserPanelForm extends React.Component {
             </div>
           </div>
         </div>
-        <SessionSelector
+        <SessionSwitcher
           setActiveSession={this.props.setActiveSession}
           close={this.closeSessionSelector.bind(this)}
           active={this.state.selectingSession}

@@ -12,7 +12,7 @@ const TRANSITION_NONE = 0;
 const TRANSITION_TO_SELECTOR = 1;
 const TRANSITION_FROM_SELECTOR = 2;
 
-class SessionSelector extends React.Component {
+class SessionSwitcher extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -65,7 +65,7 @@ class SessionSelector extends React.Component {
   }
 }
 
-SessionSelector.propTypes = {
+SessionSwitcher.propTypes = {
   setActiveSession: PropTypes.func.isRequired,
   close: PropTypes.func.isRequired,
   buttonColor: PropTypes.string.isRequired,
@@ -80,4 +80,4 @@ export default connect(
     };
   },
   null
-)(SessionSelector);
+)(SessionSwitcher);
