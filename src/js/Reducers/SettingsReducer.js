@@ -34,7 +34,6 @@ export function addAdditionalSettings(state) {
     distro: distroDefault,
     default_user: '',
     page_zoom: 1.0,
-    avatar_background_enabled: false,
     font_scale: 1.0,
     user_switcher_enabled: true,
     background_blur_enabled: false,

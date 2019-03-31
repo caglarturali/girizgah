@@ -47,13 +47,7 @@ class UserSwitcher extends React.Component {
   generateUserList() {
     let activeIndex = this.state.selectedUserIndex;
 
-    let avatarBackgroundClasses;
-
-    if (this.props.avatarEnabled) {
-      avatarBackgroundClasses = 'avatar-background';
-    } else {
-      avatarBackgroundClasses = 'avatar-background avatar-background-hidden';
-    }
+    let avatarBackgroundClasses = 'avatar-background';
 
     let avatars = window.lightdm.users.map((user, index) => {
       let classes = ['avatar-container'];
@@ -98,7 +92,10 @@ class UserSwitcher extends React.Component {
         0,
         <li
           className="avatar-container previous"
-          onClick={this.handleUserClick.bind(this, window.lightdm.users.length - 1)}
+          onClick={this.handleUserClick.bind(
+            this,
+            window.lightdm.users.length - 1
+          )}
           key="ecopy1"
         >
           <div className={avatarBackgroundClasses}>
@@ -119,7 +116,11 @@ class UserSwitcher extends React.Component {
     if (activeIndex === window.lightdm.users.length - 1) {
       let user = window.lightdm.users[0];
       avatars.push(
-        <li className="avatar-container next" onClick={this.handleUserClick.bind(this, 0)} key="ecopy2">
+        <li
+          className="avatar-container next"
+          onClick={this.handleUserClick.bind(this, 0)}
+          key="ecopy2"
+        >
           <div className={avatarBackgroundClasses}>
             <div className="avatar-mask">
               <img className="user-avatar" src={user.image} />
@@ -163,7 +164,10 @@ class UserSwitcher extends React.Component {
         {userList}
         <div className="bottom" onClick={this.handleBackButton.bind(this)}>
           <div className="left">
-            <FormattedMessage id="UserSwitcher.BackButton" defaultMessage="BACK" />
+            <FormattedMessage
+              id="UserSwitcher.BackButton"
+              defaultMessage="BACK"
+            />
           </div>
         </div>
       </div>
@@ -174,15 +178,13 @@ class UserSwitcher extends React.Component {
 UserSwitcher.propTypes = {
   active: PropTypes.bool.isRequired,
   activeUser: PropTypes.object.isRequired,
-  setActiveUser: PropTypes.func.isRequired,
-  avatarEnabled: PropTypes.bool.isRequired
+  setActiveUser: PropTypes.func.isRequired
 };
 
 export default connect(
   state => {
     return {
-      activeUser: state.user,
-      avatarEnabled: state.settings.avatar_background_enabled
+      activeUser: state.user
     };
   },
   null

@@ -8,7 +8,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import * as FileOperations from 'Logic/FileOperations';
-import TextField from '../inputs/TextField';
 import Dropdown from '../inputs/Dropdown';
 import Checkbox from '../inputs/Checkbox';
 
@@ -229,21 +228,6 @@ export const GeneralSection = props => {
               <FormattedMessage
                 id="Settings.General.AvatarEnabled"
                 defaultMessage="Avatar Enabled"
-              />
-            }
-          />
-
-          <Checkbox
-            name={'Background Enabled'}
-            value={settings.avatar_background_enabled}
-            boundFunction={props.settingsToggleBinary.bind(
-              this,
-              'avatar_background_enabled'
-            )}
-            localeContent={
-              <FormattedMessage
-                id="Settings.General.BackgroundEnabled"
-                defaultMessage="Background Enabled"
               />
             }
           />

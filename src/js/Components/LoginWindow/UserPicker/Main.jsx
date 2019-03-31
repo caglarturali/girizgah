@@ -279,10 +279,6 @@ class UserPicker extends React.Component {
       avatarClasses.push('invisible');
     }
 
-    if (settings.avatar_background_enabled === false) {
-      avatarBackgroundClasses.push('avatar-background-hidden');
-    }
-
     let _styles = {
       background: `linear-gradient(to bottom, ${
         settings.style_login_gradient_top_color

@@ -56,10 +56,6 @@
     "defaultMessage": "Avatar Enabled"
   },
   {
-    "id": "Settings.General.BackgroundEnabled",
-    "defaultMessage": "Background Enabled"
-  },
-  {
     "id": "Settings.General.HostnameVisibility",
     "defaultMessage": "Hostname Visibility"
   },
