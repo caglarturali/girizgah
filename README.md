@@ -10,7 +10,7 @@ This project is a fork of [Aether](https://noisek.github.io/Aether/) and under a
 
 Girizgah, [Pardus Giriş Ekranı Tasarım Yarışması](https://forum.pardus.org.tr/t/giris-ekrani-tasarim-yarismasi-duyurusu/8559) için geliştirilmekte olan bir projedir. Ekran görüntüleri ve projenin durumu hakkında ayrıntılı bilgiler için takipte kalınız.
 
-**Canlı önizlemeye [şuradan](https://caglarturali.github.io/Girizgah/) ulaşabilirsiniz.**
+**Canlı önizlemeye [şuradan](https://caglarturali.com/girizgah/) ulaşabilirsiniz.**
 
 ## Ekran görüntüsü
 
