@@ -1,7 +1,7 @@
 /* eslint { no-redeclare: 0 } */
 import * as Settings from '../Logic/Settings';
 import { setPageZoom } from '../Utils/Utils';
-import Default from '../Themes/Default';
+import Sunset from '../Themes/Sunset';
 
 import { defineMessages } from 'react-intl';
 
@@ -32,15 +32,29 @@ export function addAdditionalSettings(state) {
     active: false,
     minimized: false,
     distro: distroDefault,
-    default_user: '',
-    page_zoom: 1.0,
-    font_scale: 1.0,
-    user_switcher_enabled: true,
-    background_blur_enabled: false,
-    background_blur_radius: '8px',
 
-    // Set default theme
-    ...Default
+    default_user: '',
+    user_switcher_enabled: true,
+
+    date_enabled: true,
+    time_enabled: true,
+    time_seconds_enabled: true,
+
+    command_shutdown_enabled: true,
+    command_reboot_enabled: true,
+    command_hibernate_enabled: true,
+    command_sleep_enabled: true,
+
+    avatar_enabled: true,
+    avatar_size: '200px',
+    avatar_shape: 'circle',
+
+    hostname_enabled: true,
+
+    font_scale: 1.0,
+
+    // Set default theme to Pardus
+    ...Sunset
   };
 
   let settings = {};
