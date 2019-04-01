@@ -4,7 +4,7 @@ export default {
   window_font_size: '1em',
   page_zoom: 1.0,
 
-  background_blur_enabled: false,
+  background_blur_enabled: true,
   background_blur_radius: '8px',
 
   command_icons_enabled: false,

@@ -1,7 +1,7 @@
 /* eslint { no-redeclare: 0 } */
 import * as Settings from '../Logic/Settings';
 import { setPageZoom } from '../Utils/Utils';
-import Sunset from '../Themes/Sunset';
+import SublimeLight from '../Themes/SublimeLight';
 
 import { defineMessages } from 'react-intl';
 
@@ -54,7 +54,7 @@ export function addAdditionalSettings(state) {
     font_scale: 1.0,
 
     // Set default theme to Pardus
-    ...Sunset
+    ...SublimeLight
   };
 
   let settings = {};
