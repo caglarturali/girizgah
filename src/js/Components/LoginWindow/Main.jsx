@@ -12,6 +12,7 @@ import Sidebar from './Sidebar';
 import UserPicker from './UserPicker';
 import Settings from 'Components/Settings';
 import DateTimeDisplay from 'Components/DateTimeDisplay';
+import OnScreenKeyboard from '../Addons/OnScreenKeyboard/OnScreenKeyboard';
 
 class LoginWindow extends React.Component {
   constructor(props) {
@@ -45,7 +46,8 @@ class LoginWindow extends React.Component {
         key="date-time-display"
         language={this.props.language}
       />,
-      <Settings key="settings-window" />
+      <Settings key="settings-window" />,
+      <OnScreenKeyboard key="virtual-keyboard" />
     ];
   }
 }

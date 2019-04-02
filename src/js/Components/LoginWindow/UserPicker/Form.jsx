@@ -121,6 +121,7 @@ class UserPanelForm extends React.Component {
               password={this.props.password}
               passwordFailed={this.props.passwordFailed}
               handlePasswordInput={this.props.handlePasswordInput}
+              handleSubmit={this.props.handleLoginSubmit}
             />
           </div>
           <div className="submit-row">

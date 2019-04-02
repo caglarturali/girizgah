@@ -13,6 +13,7 @@ import UserSwitcher from './UserSwitcher';
 import UserPanelForm from './Form';
 
 import KeyboardLayoutSelector from './KeyboardLayoutSelector';
+import OnScreenKeyboardToggler from '../../Addons/OnScreenKeyboard/OnScreenKeyboardToggler';
 
 import { defineMessages } from 'react-intl';
 
@@ -134,7 +135,11 @@ class UserPicker extends React.Component {
   }
 
   handleLoginSubmit(event) {
-    event.preventDefault();
+    try {
+      event.preventDefault();
+    } catch (e) {
+      e;
+    }
 
     if (window.__debug === true) {
       if (this.state.password.toLowerCase() !== 'password') {
@@ -206,8 +211,14 @@ class UserPicker extends React.Component {
   }
 
   handlePasswordInput(event) {
+    let value;
+    if (event.target) {
+      value = event.target.value;
+    } else {
+      value = event;
+    }
     this.setState({
-      password: event.target.value
+      password: value
     });
   }
 
@@ -319,11 +330,17 @@ class UserPicker extends React.Component {
                 handleSwitcherClick={this.handleSwitcherClick.bind(this)}
               />
             </If>
-            <KeyboardLayoutSelector
-              buttonColor={settings.style_login_button_color}
-              activeLayout={this.props.activeLayout}
-              handleLayoutChange={this.handleLayoutChange.bind(this)}
-            />
+            <div className="right">
+              <KeyboardLayoutSelector
+                buttonColor={settings.style_login_button_color}
+                activeLayout={this.props.activeLayout}
+                handleLayoutChange={this.handleLayoutChange.bind(this)}
+              />
+              <OnScreenKeyboardToggler
+                key="virtual-keyboard-button"
+                color={settings.style_login_button_color}
+              />
+            </div>
           </div>
         </div>
         <UserSwitcher

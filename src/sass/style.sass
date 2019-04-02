@@ -558,16 +558,17 @@ body
         font-weight: bold
 
   .login-panel-main .bottom, .login-panel-switcher .bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
     font-family: "Noto Sans"
     height: 5%
 
     .left
-      padding-top: 15px
       width: 30%
 
     .left, .right
       color: #fff
-      float: left
       font-size: 0.75em
       font-weight: bold
       letter-spacing: 1px
@@ -578,24 +579,28 @@ body
         cursor: pointer
 
     .right
-      padding-top: 5px
-      float: right;
+      align-items: center
+      display: flex
+      flex-direction: row
 
       .keyboard-sel
+        align-self: center
         border: none
         border-radius: 2px
         overflow: hidden
-        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05)
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.12)
         width: 120px
+        padding: 5px 8px
+        opacity: .75
+        transition: all 200ms ease
 
         &:hover
           cursor: pointer
+          opacity: 1
 
         select
           color: #fff
           cursor: pointer
-          font-size: 0.85em
 
           font-weight: bold
           line-height: 1.2em
@@ -605,22 +610,47 @@ body
           overflow: hidden
           white-space: nowrap
 
-          padding: 5px 8px
           border: none
           box-shadow: none
           background: transparent
           background-image: none
           -webkit-appearance: none
           width: 100%
-          transition: transform 200ms ease
+          transition: all 200ms ease
 
           &:hover
-            transform: translateX(3px)
+            transform: translateY(-2px)
 
         select:focus
           outline: none
           transform: none
 
+
+      .virtual-keyboard-toggler
+        align-self: center
+        border: none
+        border-radius: 2px
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05)
+        fill: #fff
+        user-select: none
+        margin-left: 5px
+        padding: 0 5px
+
+        opacity: .75
+        transition: all 200ms ease
+        
+        &:hover
+          cursor: pointer
+          opacity: 1
+
+      .virtual-keyboard-toggler > svg
+        width: 24px
+        height: 24px
+        transition: all 200ms ease
+
+        &:hover
+          transform: translateY(-2px)
+          opacity: 1
         
 /*****************************************************************
   -- #0.3b Command Panel
@@ -1325,3 +1355,62 @@ body
 .minimize
   height: 0px !important
   overflow: hidden !important
+
+
+/*****************************************************************
+  Virtual keyboard panel styles.
+/*****************************************************************/
+.virtual-keyboard
+  display: flex
+  position: absolute
+  width: 720px
+  opacity: 1
+
+  & > div
+    display: flex
+    flex-wrap: wrap
+
+    width: 100%
+
+.virtual-keyboard .virtual-keyboard-handle
+  background: #222
+  height: 25px
+  width: 100%
+
+  &:hover
+    cursor: -webkit-grab
+
+  &:active
+    cursor: -webkit-grabbing !important
+
+  &:active:hover
+    cursor: -webkit-grabbing !important
+
+  ul
+    display: flex
+    justify-content: flex-end
+
+    overflow: hidden
+
+    height: 100%
+    width: 100%
+
+    li
+      color: #000
+      font-weight: bold
+
+      padding: 5px 15px
+      height: 100%
+
+    li:hover
+      cursor: pointer
+
+    li.virtual-keyboard-minimize
+      color: #fff
+      background: #424242
+
+    li.virtual-keyboard-close
+      background: #de3838
+
+.virtual-keyboard .virtual-keyboard-body
+  background: rgba(227, 227, 227, 0.85)

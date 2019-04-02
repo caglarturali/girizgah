@@ -30,6 +30,7 @@ export function addAdditionalSettings(state) {
 
   let defaults = {
     active: false,
+    keyboardActive: false,
     minimized: false,
     distro: distroDefault,
 
@@ -136,6 +137,23 @@ export const SettingsReducer = (state, action) => {
       var el = document.getElementById('settings');
 
       if (newSettings.active === true) {
+        el.className = el.className.replace(' hidden', '');
+      } else {
+        el.className += ' hidden';
+      }
+
+      return { ...state, settings: newSettings };
+
+    case 'SETTINGS_VIRTUAL_KEYBOARD_ACTIVE':
+      var newSettings = {
+        ...state.settings,
+        keyboardActive: !state.settings.keyboardActive
+      };
+
+      // This shouldn't be here. It is, though.
+      var el = document.getElementById('virtual-keyboard');
+
+      if (newSettings.keyboardActive === true) {
         el.className = el.className.replace(' hidden', '');
       } else {
         el.className += ' hidden';
